@@ -111,6 +111,9 @@
 
   .prog{ position:fixed; top:0; left:0; height:2px; z-index:70; background:linear-gradient(90deg,var(--cyan),var(--mint)); width:0%; transition:width .12s linear; }
 
+  .nav-logo{ height:14px; }
+  @media (min-width:768px){ .nav-logo{ height:22px; } }
+
   .mm{ transform:translateY(-10px); opacity:0; pointer-events:none; }
   .mm.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
   .mm a{ opacity:0; transform:translateY(1.5rem); transition:all .6s var(--ease); }
@@ -284,9 +287,9 @@
 
 <!-- ============ NAV ============ -->
 <nav class="fixed top-4 inset-x-0 z-40 flex justify-center px-4">
-  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-1 md:py-2 inset-hl">
+  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-0.5 md:py-2 inset-hl">
     <a href="#top" class="flex items-center gap-2.5 pl-2 pr-3 py-1 rounded-full hover:bg-white/5 ez">
-      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-5 md:h-7 w-auto">
+      <img src="assets/logo.svg" alt="ANITRIP 로고" class="nav-logo w-auto">
     </a>
     <div class="hidden md:flex items-center gap-0.5 text-[13px] text-ink/70">
       <a href="#problem" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">문제 정의</a>
@@ -301,7 +304,7 @@
         <iconify-icon icon="solar:arrow-right-up-linear" class="arw"></iconify-icon>
       </span>
     </a>
-    <button id="burger" class="burger md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
+    <button id="burger" class="burger md:hidden w-7 h-7 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
       <span class="l1 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l2 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l3 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
