@@ -7,6 +7,11 @@
 <meta name="description" content="애니메이션 속 장면을 실제 장소로 잇는 성지순례 가이드 앱 ANITRIP. 리서치부터 UI 디자인까지의 케이스 스터디. 송유진 UI/UX 디자이너.">
 <meta property="og:title" content="ANITRIP — 애니 성지순례 가이드 앱">
 <meta property="og:description" content="애니 속 그 장면, 직접 가볼 수 있어요. UI/UX 케이스 스터디 by 송유진">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mary3103.github.io/anitrip-portfolio/">
+<meta property="og:image" content="https://mary3103.github.io/anitrip-portfolio/assets/landing.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mary3103.github.io/anitrip-portfolio/assets/landing.webp">
 <link rel="icon" href="assets/logo.svg">
 <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
 <script>document.documentElement.className += ' js';</script>
@@ -137,13 +142,20 @@
   .marq-wrap:hover .marq{ animation-play-state:paused; }
 
   /* journey map */
-  .jm-scroll{ overflow-x:auto; scrollbar-width:thin; }
-  .jm-grid{ display:grid; grid-template-columns:repeat(5, minmax(230px,1fr)); gap:.75rem; min-width:1180px; }
-  .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer;
+  .jm-scroll{ overflow-x:auto; scrollbar-width:thin; scroll-snap-type:x mandatory; }
+  .jm-grid{ display:flex; gap:.75rem; min-width:0; }
+  .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer; flex:0 0 88%; scroll-snap-align:center;
     transition:background .4s var(--ease), border-color .4s var(--ease)}
   .jm-col:hover{ background:rgba(255,255,255,0.05); }
   .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); }
   .jm-col:focus-visible{ outline:2px solid var(--mint); outline-offset:2px; }
+
+  /* 모바일: 곡선 그래프를 카드 위에 고정해 스크롤해도 함께 보이게 함. 라벨은 카드 안 mood 배지와 중복돼 숨김 */
+  @media (max-width:767px){
+    .jm-curve{ position:sticky; top:5rem; z-index:5; background:var(--bg); padding-top:.5rem; }
+    .jm-curve svg{ height:110px; }
+    .jm-axis-label, .jm-point-label{ display:none; }
+  }
 
   .jm-emoji{ display:none; }
   @keyframes jmFade{ from{ opacity:0; } to{ opacity:1; } }
@@ -279,9 +291,9 @@
 
 <!-- ============ NAV ============ -->
 <nav class="fixed top-4 inset-x-0 z-40 flex justify-center px-4">
-  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-2 inset-hl">
+  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-1.5 md:py-2 inset-hl">
     <a href="#top" class="flex items-center gap-2.5 pl-2 pr-3 py-1 rounded-full hover:bg-white/5 ez">
-      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-7 w-auto">
+      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-6 md:h-7 w-auto">
     </a>
     <div class="hidden md:flex items-center gap-0.5 text-[13px] text-ink/70">
       <a href="#problem" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">문제 정의</a>
@@ -296,7 +308,7 @@
         <iconify-icon icon="solar:arrow-right-up-linear" class="arw"></iconify-icon>
       </span>
     </a>
-    <button id="burger" class="burger md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
+    <button id="burger" class="burger md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
       <span class="l1 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l2 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l3 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
@@ -311,7 +323,7 @@
   <a href="#screens" style="transition-delay:180ms" class="kr">화면</a>
   <a href="#system" style="transition-delay:240ms" class="kr">디자인 시스템</a>
   <a href="#retro" style="transition-delay:300ms" class="kr">회고</a>
-  <a href="#contact" style="transition-delay:360ms" class="mt-3 text-base font-semibold btn btn-p rounded-full px-7 py-3.5">mary3103@naver.com</a>
+  <a href="#contact" style="transition-delay:360ms" class="mt-3 text-base font-medium btn btn-p rounded-full px-7 py-3.5">mary3103@naver.com</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -473,7 +485,7 @@
 
         <div class="jm-scroll pb-3" id="jmScroll">
           <!-- curve -->
-          <div class="jm-curve min-w-[1180px] mb-5">
+          <div class="jm-curve mb-5">
             <svg viewBox="0 0 1180 220" class="w-full h-[200px]" aria-label="단계별 감정 변화 곡선">
               <defs>
                 <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
@@ -486,9 +498,9 @@
               <line x1="60" y1="46" x2="1180" y2="46" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="112" x2="1180" y2="112" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="178" x2="1180" y2="178" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
-              <text x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
-              <text x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
-              <text x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
+              <text class="jm-axis-label" x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
+              <text class="jm-axis-label" x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
+              <text class="jm-axis-label" x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
                     fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
@@ -499,11 +511,11 @@
                 <circle class="jd" data-s="3" cx="826" cy="168" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
                 <circle class="jd" data-s="4" cx="1062" cy="190" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
               </g>
-              <text x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
-              <text x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
-              <text x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
-              <text x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
-              <text x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
+              <text class="jm-point-label" x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
+              <text class="jm-point-label" x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
+              <text class="jm-point-label" x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
+              <text class="jm-point-label" x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
+              <text class="jm-point-label" x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
             </svg>
           </div>
 
