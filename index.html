@@ -144,18 +144,10 @@
   /* journey map */
   .jm-scroll{ overflow-x:auto; scrollbar-width:thin; scroll-snap-type:x mandatory; }
   .jm-grid{ display:flex; gap:.75rem; min-width:0; }
-  .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer; flex:0 0 88%; scroll-snap-align:center;
+  .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer; flex:0 0 90%; min-width:0; scroll-snap-align:center;
     transition:background .4s var(--ease), border-color .4s var(--ease)}
   .jm-col:hover{ background:rgba(255,255,255,0.05); }
-  .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); }
   .jm-col:focus-visible{ outline:2px solid var(--mint); outline-offset:2px; }
-
-  /* 모바일: 곡선 그래프를 카드 위에 고정해 스크롤해도 함께 보이게 함. 라벨은 카드 안 mood 배지와 중복돼 숨김 */
-  @media (max-width:767px){
-    .jm-curve{ position:sticky; top:5rem; z-index:5; background:var(--bg); padding-top:.5rem; }
-    .jm-curve svg{ height:110px; }
-    .jm-axis-label, .jm-point-label{ display:none; }
-  }
 
   .jm-emoji{ display:none; }
   @keyframes jmFade{ from{ opacity:0; } to{ opacity:1; } }
@@ -166,7 +158,7 @@
     .jm-curve{ min-width:0 !important; }
     .jm-grid{ display:flex; gap:.6rem; min-width:0; align-items:stretch; height:38rem; }
     .jm-col{ flex:1 1 0; min-width:0; padding:1.15rem 1rem; overflow:hidden; display:flex; flex-direction:column; }
-    .jm-col.act{ flex-grow:3.4; }
+    .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); flex-grow:3.4; }
     .jm-col .jm-detail{ display:none; }
     .jm-col.act .jm-detail{ display:block; animation:jmFade .45s var(--ease) both;
       flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain;
@@ -485,7 +477,7 @@
 
         <div class="jm-scroll pb-3" id="jmScroll">
           <!-- curve -->
-          <div class="jm-curve mb-5">
+          <div class="jm-curve min-w-[1180px] mb-5">
             <svg viewBox="0 0 1180 220" class="w-full h-[200px]" aria-label="단계별 감정 변화 곡선">
               <defs>
                 <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
@@ -498,9 +490,9 @@
               <line x1="60" y1="46" x2="1180" y2="46" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="112" x2="1180" y2="112" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="178" x2="1180" y2="178" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
-              <text class="jm-axis-label" x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
-              <text class="jm-axis-label" x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
-              <text class="jm-axis-label" x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
+              <text x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
+              <text x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
+              <text x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
                     fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
@@ -511,11 +503,11 @@
                 <circle class="jd" data-s="3" cx="826" cy="168" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
                 <circle class="jd" data-s="4" cx="1062" cy="190" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
               </g>
-              <text class="jm-point-label" x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
-              <text class="jm-point-label" x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
-              <text class="jm-point-label" x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
-              <text class="jm-point-label" x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
-              <text class="jm-point-label" x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
+              <text x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
+              <text x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
+              <text x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
+              <text x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
+              <text x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
             </svg>
           </div>
 
