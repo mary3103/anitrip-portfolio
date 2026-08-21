@@ -496,8 +496,8 @@
               <line x1="60" y1="46" x2="1180" y2="46" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="112" x2="1180" y2="112" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="178" x2="1180" y2="178" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
-              <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
-              <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
+              <path class="jm-fill" d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
+              <path class="jm-line" d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
                     fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
               <g id="dots">
                 <circle class="jd" data-s="0" cx="118" cy="46" r="7" fill="#000808" stroke="#00FFA3" stroke-width="2.5"/>
@@ -1830,28 +1830,51 @@
      비율(1180 기준 등분) 계산이 아니라 getScreenCTM으로 카드 중심의 실제 화면 좌표를 svg 좌표로 역변환해서 오차 없이 맞춘다 */
   var jmCurveSvg = document.querySelector('.jm-curve svg');
   var jmDots = document.querySelectorAll('.jd'), jmLabels = document.querySelectorAll('.jm-label');
+  var jmLine = document.querySelector('.jm-line'), jmFill = document.querySelector('.jm-fill');
   var jmOrigCx = Array.prototype.map.call(jmDots, function(d){ return d.getAttribute('cx'); });
   var jmOrigLx = Array.prototype.map.call(jmLabels, function(l){ return l.getAttribute('x'); });
+  var jmOrigLineD = jmLine ? jmLine.getAttribute('d') : null;
+  var jmOrigFillD = jmFill ? jmFill.getAttribute('d') : null;
+  var jmCy = Array.prototype.map.call(jmDots, function(d){ return +d.getAttribute('cy'); });
+  function jmCatmullRom(pts){
+    var d = 'M' + pts[0].x + ',' + pts[0].y;
+    for(var i = 0; i < pts.length - 1; i++){
+      var p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+      var c1x = p1.x + (p2.x - p0.x) / 6, c1y = p1.y + (p2.y - p0.y) / 6;
+      var c2x = p2.x - (p3.x - p1.x) / 6, c2y = p2.y - (p3.y - p1.y) / 6;
+      d += ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + p2.x + ',' + p2.y;
+    }
+    return d;
+  }
   function jmFitCurve(){
     if(!jmCurveSvg || !cols.length) return;
     if(window.matchMedia('(min-width:768px)').matches){
       jmCurveSvg.style.width = '';
       jmDots.forEach(function(d,i){ d.setAttribute('cx', jmOrigCx[i]); });
       jmLabels.forEach(function(l,i){ l.setAttribute('x', jmOrigLx[i]); });
+      if(jmLine) jmLine.setAttribute('d', jmOrigLineD);
+      if(jmFill) jmFill.setAttribute('d', jmOrigFillD);
       return;
     }
     var first = cols[0], last = cols[cols.length - 1];
     jmCurveSvg.style.width = ((last.offsetLeft + last.offsetWidth) - first.offsetLeft) + 'px';
     var ctm = jmCurveSvg.getScreenCTM();
     if(!ctm) return;
-    var inv = ctm.inverse(), pt = jmCurveSvg.createSVGPoint();
+    var inv = ctm.inverse(), pt = jmCurveSvg.createSVGPoint(), points = [];
     cols.forEach(function(c, i){
       var r = c.getBoundingClientRect();
       pt.x = r.left + r.width / 2; pt.y = 0;
       var svgX = pt.matrixTransform(inv).x;
       if(jmDots[i]) jmDots[i].setAttribute('cx', svgX);
       if(jmLabels[i]) jmLabels[i].setAttribute('x', svgX);
+      points.push({ x: svgX, y: jmCy[i] });
     });
+    var lineD = jmCatmullRom(points);
+    if(jmLine) jmLine.setAttribute('d', lineD);
+    if(jmFill){
+      var lastP = points[points.length - 1], firstP = points[0];
+      jmFill.setAttribute('d', lineD + ' L' + lastP.x + ',215 L' + firstP.x + ',215 Z');
+    }
   }
   window.addEventListener('resize', jmFitCurve);
   window.addEventListener('load', jmFitCurve);
