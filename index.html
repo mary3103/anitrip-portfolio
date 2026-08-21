@@ -506,11 +506,11 @@
                 <circle class="jd" data-s="3" cx="826" cy="168" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
                 <circle class="jd" data-s="4" cx="1062" cy="190" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
               </g>
-              <text x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
-              <text x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
-              <text x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
-              <text x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
-              <text x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
+              <text class="jm-label" data-s="0" x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
+              <text class="jm-label" data-s="1" x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
+              <text class="jm-label" data-s="2" x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
+              <text class="jm-label" data-s="3" x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
+              <text class="jm-label" data-s="4" x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
             </svg>
           </div>
 
@@ -1826,13 +1826,32 @@
     if(!jmTick){ requestAnimationFrame(jmSync); jmTick = true; }
   }, { passive:true });
 
-  /* 모바일: 그래프(svg) 폭을 카드 5장 폭에 정확히 맞춰서 점이 카드 중앙과 정렬되게 함. 왼쪽 라벨 열은 이 폭 계산과 무관하게 별도로 붙음 */
+  /* 모바일: 그래프(svg) 폭을 카드 5장 폭에 맞추고, 각 점/라벨을 해당 카드의 실제 화면 중앙에 정확히 맞춤.
+     비율(1180 기준 등분) 계산이 아니라 getScreenCTM으로 카드 중심의 실제 화면 좌표를 svg 좌표로 역변환해서 오차 없이 맞춘다 */
   var jmCurveSvg = document.querySelector('.jm-curve svg');
+  var jmDots = document.querySelectorAll('.jd'), jmLabels = document.querySelectorAll('.jm-label');
+  var jmOrigCx = Array.prototype.map.call(jmDots, function(d){ return d.getAttribute('cx'); });
+  var jmOrigLx = Array.prototype.map.call(jmLabels, function(l){ return l.getAttribute('x'); });
   function jmFitCurve(){
     if(!jmCurveSvg || !cols.length) return;
-    if(window.matchMedia('(min-width:768px)').matches){ jmCurveSvg.style.width = ''; return; }
+    if(window.matchMedia('(min-width:768px)').matches){
+      jmCurveSvg.style.width = '';
+      jmDots.forEach(function(d,i){ d.setAttribute('cx', jmOrigCx[i]); });
+      jmLabels.forEach(function(l,i){ l.setAttribute('x', jmOrigLx[i]); });
+      return;
+    }
     var first = cols[0], last = cols[cols.length - 1];
     jmCurveSvg.style.width = ((last.offsetLeft + last.offsetWidth) - first.offsetLeft) + 'px';
+    var ctm = jmCurveSvg.getScreenCTM();
+    if(!ctm) return;
+    var inv = ctm.inverse(), pt = jmCurveSvg.createSVGPoint();
+    cols.forEach(function(c, i){
+      var r = c.getBoundingClientRect();
+      pt.x = r.left + r.width / 2; pt.y = 0;
+      var svgX = pt.matrixTransform(inv).x;
+      if(jmDots[i]) jmDots[i].setAttribute('cx', svgX);
+      if(jmLabels[i]) jmLabels[i].setAttribute('x', svgX);
+    });
   }
   window.addEventListener('resize', jmFitCurve);
   window.addEventListener('load', jmFitCurve);
