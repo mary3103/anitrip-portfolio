@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANITRIP — 애니 성지순례 가이드 앱 | UI/UX 케이스 스터디</title>
+<meta name="description" content="애니메이션 속 장면을 실제 장소로 잇는 성지순례 가이드 앱 ANITRIP. 리서치부터 UI 디자인까지의 케이스 스터디. 송유진 UI/UX 디자이너.">
+<meta property="og:title" content="ANITRIP — 애니 성지순례 가이드 앱">
+<meta property="og:description" content="애니 속 그 장면, 직접 가볼 수 있어요. UI/UX 케이스 스터디 by 송유진">
+<link rel="icon" href="assets/logo.svg">
+<script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+<script>document.documentElement.className += ' js';</script>
+<style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Paperlogy,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.-bottom-32{bottom:-8rem}.-left-32{left:-8rem}.-left-40{left:-10rem}.-left-6{left:-1.5rem}.-right-3{right:-.75rem}.-top-3{top:-.75rem}.-top-40{top:-10rem}.bottom-0{bottom:0}.bottom-28{bottom:7rem}.bottom-6{bottom:1.5rem}.bottom-8{bottom:2rem}.left-1\/2{left:50%}.left-5{left:1.25rem}.right-5{right:1.25rem}.right-\[-6rem\]{right:-6rem}.top-1\/2{top:50%}.top-1\/3{top:33.333333%}.top-20{top:5rem}.top-4{top:1rem}.top-5{top:1.25rem}.z-30{z-index:30}.z-40{z-index:40}.z-\[55\]{z-index:55}.z-\[58\]{z-index:58}.z-\[65\]{z-index:65}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-24{margin-bottom:6rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-10{margin-top:2.5rem}.mt-14{margin-top:3.5rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-\[3px\]{margin-top:3px}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[402\/874\]{aspect-ratio:402/874}.h-1{height:.25rem}.h-1\.5{height:.375rem}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[1\.5px\]{height:1.5px}.h-\[200px\]{height:200px}.h-\[420px\]{height:420px}.h-\[520px\]{height:520px}.h-\[560px\]{height:560px}.h-full{height:100%}.h-px{height:1px}.max-h-\[82vh\]{max-height:82vh}.min-h-\[100dvh\]{min-height:100dvh}.min-h-full{min-height:100%}.w-1{width:.25rem}.w-1\.5{width:.375rem}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-2\.5{width:.625rem}.w-7{width:1.75rem}.w-9{width:2.25rem}.w-\[18px\]{width:18px}.w-\[236px\]{width:236px}.w-\[248px\]{width:248px}.w-\[42\%\]{width:42%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-\[560px\]{width:560px}.w-auto{width:auto}.w-full{width:100%}.min-w-\[1180px\]{min-width:1180px}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-\[210px\]{max-width:210px}.max-w-\[88vw\]{max-width:88vw}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.-translate-y-1\/2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%,to{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}.animate-bounce{animation:bounce 1s infinite}.resize{resize:both}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-9{gap:2.25rem}.gap-\[5px\]{gap:5px}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-y-2{row-gap:.5rem}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-3\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.875rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-\[1\.4rem\]{border-radius:1.4rem}.rounded-\[1\.5rem\]{border-radius:1.5rem}.rounded-\[1\.75rem\]{border-radius:1.75rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-mint1\/25{border-color:rgba(0,255,163,.25)}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.bg-\[\#0C1614\]{--tw-bg-opacity:1;background-color:rgb(12 22 20/var(--tw-bg-opacity,1))}.bg-\[\#FF7E6B\]{--tw-bg-opacity:1;background-color:rgb(255 126 107/var(--tw-bg-opacity,1))}.bg-black\/10{background-color:rgba(0,0,0,.1)}.bg-cyan1{--tw-bg-opacity:1;background-color:rgb(0 210 255/var(--tw-bg-opacity,1))}.bg-dim{--tw-bg-opacity:1;background-color:rgb(143 166 157/var(--tw-bg-opacity,1))}.bg-dim\/50{background-color:rgba(143,166,157,.5)}.bg-ink{--tw-bg-opacity:1;background-color:rgb(245 252 248/var(--tw-bg-opacity,1))}.bg-mint1{--tw-bg-opacity:1;background-color:rgb(0 255 163/var(--tw-bg-opacity,1))}.bg-mint1\/10{background-color:rgba(0,255,163,.1)}.bg-mint1\/15{background-color:rgba(0,255,163,.15)}.bg-night{--tw-bg-opacity:1;background-color:rgb(0 8 8/var(--tw-bg-opacity,1))}.bg-night\/45{background-color:rgba(0,8,8,.45)}.bg-night\/95{background-color:rgba(0,8,8,.95)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(16 20 19/var(--tw-bg-opacity,1))}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.bg-white\/\[0\.025\]{background-color:hsla(0,0%,100%,.025)}.bg-white\/\[0\.03\]{background-color:hsla(0,0%,100%,.03)}.bg-white\/\[0\.045\]{background-color:hsla(0,0%,100%,.045)}.bg-white\/\[0\.04\]{background-color:hsla(0,0%,100%,.04)}.bg-white\/\[0\.05\]{background-color:hsla(0,0%,100%,.05)}.bg-white\/\[0\.06\]{background-color:hsla(0,0%,100%,.06)}.bg-white\/\[0\.07\]{background-color:hsla(0,0%,100%,.07)}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-cyan1\/\[0\.09\]{--tw-gradient-from:rgba(0,210,255,.09) var(--tw-gradient-from-position);--tw-gradient-to:rgba(0,210,255,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-mint1\/\[0\.07\]{--tw-gradient-to:rgba(0,255,163,.07) var(--tw-gradient-to-position)}.object-cover{-o-object-fit:cover;object-fit:cover}.object-top{-o-object-position:top;object-position:top}.p-2{padding:.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.px-\[5\%\]{padding-left:5%;padding-right:5%}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-28{padding-top:7rem;padding-bottom:7rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-16{padding-bottom:4rem}.pb-3{padding-bottom:.75rem}.pb-5{padding-bottom:1.25rem}.pb-\[3\%\]{padding-bottom:3%}.pb-\[4\%\]{padding-bottom:4%}.pl-2{padding-left:.5rem}.pl-3{padding-left:.75rem}.pl-5{padding-left:1.25rem}.pl-6{padding-left:1.5rem}.pl-7{padding-left:1.75rem}.pr-2{padding-right:.5rem}.pr-3{padding-right:.75rem}.pt-32{padding-top:8rem}.pt-5{padding-top:1.25rem}.pt-7{padding-top:1.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:JalnanGothic,Paperlogy,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[12px\]{font-size:12px}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[15px\]{font-size:15px}.text-\[16px\]{font-size:16px}.text-\[17px\]{font-size:17px}.text-\[2\.3rem\]{font-size:2.3rem}.text-\[2rem\]{font-size:2rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.34\]{line-height:1.34}.leading-\[1\.45\]{line-height:1.45}.leading-\[1\.6\]{line-height:1.6}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-\[0\.15em\]{letter-spacing:.15em}.tracking-\[0\.18em\]{letter-spacing:.18em}.tracking-\[0\.25em\]{letter-spacing:.25em}.tracking-tight{letter-spacing:-.025em}.tracking-widest{letter-spacing:.1em}.text-\[\#02120d\]{--tw-text-opacity:1;color:rgb(2 18 13/var(--tw-text-opacity,1))}.text-\[\#FF7E6B\]{--tw-text-opacity:1;color:rgb(255 126 107/var(--tw-text-opacity,1))}.text-cyan1{--tw-text-opacity:1;color:rgb(0 210 255/var(--tw-text-opacity,1))}.text-dim{--tw-text-opacity:1;color:rgb(143 166 157/var(--tw-text-opacity,1))}.text-dim\/60{color:rgba(143,166,157,.6)}.text-dim\/70{color:rgba(143,166,157,.7)}.text-dim\/80{color:rgba(143,166,157,.8)}.text-ink{--tw-text-opacity:1;color:rgb(245 252 248/var(--tw-text-opacity,1))}.text-ink\/70{color:rgba(245,252,248,.7)}.text-ink\/80{color:rgba(245,252,248,.8)}.text-ink\/85{color:rgba(245,252,248,.85)}.text-mint1{--tw-text-opacity:1;color:rgb(0 255 163/var(--tw-text-opacity,1))}.text-white\/15{color:hsla(0,0%,100%,.15)}.text-white\/20{color:hsla(0,0%,100%,.2)}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-lg{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-2xl{--tw-backdrop-blur:blur(40px)}.backdrop-blur-2xl,.backdrop-blur-3xl{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-3xl{--tw-backdrop-blur:blur(64px)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.hover\:border-mint1\/35:hover{border-color:rgba(0,255,163,.35)}.hover\:border-mint1\/40:hover{border-color:rgba(0,255,163,.4)}.hover\:bg-white\/10:hover{background-color:hsla(0,0%,100%,.1)}.hover\:bg-white\/15:hover{background-color:hsla(0,0%,100%,.15)}.hover\:bg-white\/5:hover{background-color:hsla(0,0%,100%,.05)}.hover\:bg-white\/\[0\.045\]:hover{background-color:hsla(0,0%,100%,.045)}.hover\:bg-white\/\[0\.08\]:hover{background-color:hsla(0,0%,100%,.08)}.hover\:text-ink:hover{--tw-text-opacity:1;color:rgb(245 252 248/var(--tw-text-opacity,1))}.group:hover .group-hover\:scale-\[1\.01\]{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-cyan1\/15{background-color:rgba(0,210,255,.15)}.group:hover .group-hover\:bg-mint1\/15{background-color:rgba(0,255,163,.15)}.group:hover .group-hover\:bg-white\/10{background-color:hsla(0,0%,100%,.1)}.group:hover .group-hover\:text-mint1\/60{color:rgba(0,255,163,.6)}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width:640px){.sm\:-left-12{left:-3rem}.sm\:-right-8{right:-2rem}.sm\:col-span-3{grid-column:span 3/span 3}.sm\:col-span-6{grid-column:span 6/span 6}.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:w-\[268px\]{width:268px}.sm\:w-\[280px\]{width:280px}.sm\:w-auto{width:auto}.sm\:max-w-\[620px\]{max-width:620px}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:gap-6{gap:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:p-9{padding:2.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:leading-\[1\.3\]{line-height:1.3}}@media (min-width:768px){.md\:order-1{order:1}.md\:order-2{order:2}.md\:col-span-2{grid-column:span 2/span 2}.md\:mb-24{margin-bottom:6rem}.md\:mb-32{margin-bottom:8rem}.md\:flex{display:flex}.md\:inline-flex{display:inline-flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:gap-10{gap:2.5rem}.md\:p-9{padding:2.25rem}.md\:py-32{padding-top:8rem;padding-bottom:8rem}.md\:py-40{padding-top:10rem;padding-bottom:10rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-\[17px\]{font-size:17px}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:1024px){.lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}.lg\:col-span-3{grid-column:span 3/span 3}.lg\:col-span-4{grid-column:span 4/span 4}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.lg\:grid-cols-\[\.95fr_1\.05fr\]{grid-template-columns:.95fr 1.05fr}.lg\:grid-cols-\[\.9fr_1\.1fr\]{grid-template-columns:.9fr 1.1fr}.lg\:grid-cols-\[1\.1fr_\.9fr\]{grid-template-columns:1.1fr .9fr}.lg\:flex-row{flex-direction:row}.lg\:items-end{align-items:flex-end}.lg\:justify-end{justify-content:flex-end}.lg\:justify-between{justify-content:space-between}.lg\:gap-12{gap:3rem}.lg\:gap-16{gap:4rem}.lg\:gap-20{gap:5rem}.lg\:gap-8{gap:2rem}.lg\:whitespace-nowrap{white-space:nowrap}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:py-40{padding-top:10rem;padding-bottom:10rem}.lg\:text-5xl{font-size:3rem;line-height:1}.lg\:text-\[2\.7rem\]{font-size:2.7rem}.lg\:text-\[2\.9rem\]{font-size:2.9rem}.lg\:text-\[3\.6rem\]{font-size:3.6rem}}</style>
+<style>
+  /* ---------- fonts ---------- */
+  @font-face{ font-family:'JalnanGothic'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff'); font-weight:normal; font-style:normal; font-display:swap; }
+  @font-face{ font-family:'Paperlogy'; font-weight:400; font-style:normal; font-display:swap; src:url('fonts/paperlogy-400.woff2') format('woff2'); }
+  @font-face{ font-family:'Paperlogy'; font-weight:500; font-style:normal; font-display:swap; src:url('fonts/paperlogy-500.woff2') format('woff2'); }
+  @font-face{ font-family:'Paperlogy'; font-weight:600; font-style:normal; font-display:swap; src:url('fonts/paperlogy-600.woff2') format('woff2'); }
+  @font-face{ font-family:'Paperlogy'; font-weight:700; font-style:normal; font-display:swap; src:url('fonts/paperlogy-700.woff2') format('woff2'); }
+
+  :root{
+    --bg:#000808;
+    --surface:#101413;
+    --line:rgba(255,255,255,0.085);
+    --cyan:#00D2FF;
+    --mint:#00FFA3;
+    --ink:#F5FCF8;
+    --dim:#8FA69D;
+    --ease:cubic-bezier(0.16,1,0.3,1);
+  }
+  *{ -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Paperlogy',system-ui,sans-serif; overflow-x:hidden; }
+  .kr{ word-break:keep-all; overflow-wrap:break-word; }
+  section{ scroll-margin-top:100px; }
+  ::selection{ background:var(--mint); color:#02120d; }
+  ::-webkit-scrollbar{ width:9px; height:9px; }
+  ::-webkit-scrollbar-track{ background:#000808; }
+  ::-webkit-scrollbar-thumb{ background:#16241f; border-radius:99px; }
+  ::-webkit-scrollbar-thumb:hover{ background:#1e332c; }
+
+  .ez{ transition:all .5s var(--ease); }
+  .grad{ background:linear-gradient(100deg,var(--cyan),var(--mint)); }
+  .grad-t{ background:linear-gradient(100deg,var(--cyan),var(--mint)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hair{ border:1px solid var(--line); }
+  .inset-hl{ box-shadow:inset 0 1px 0 rgba(255,255,255,0.12); }
+
+  .shell{ border:1px solid var(--line); background:rgba(255,255,255,0.028); border-radius:2rem; padding:.375rem; }
+  .core{ background:var(--surface); border-radius:calc(2rem - .375rem); border:1px solid rgba(255,255,255,0.045); box-shadow:inset 0 1px 1px rgba(255,255,255,0.06); }
+
+  .btn{ transition:all .5s var(--ease); }
+  .btn:hover{ transform:scale(1.02); }
+  .btn:active{ transform:scale(.98); }
+  .btn-p{ background:linear-gradient(100deg,var(--cyan),var(--mint)); color:#02120d; }
+  .btn-p:hover{ box-shadow:0 0 34px -10px rgba(0,255,163,.45); }
+  .btn .arw{ transition:transform .5s var(--ease); }
+  .btn:hover .arw{ transform:translateX(4px); }
+
+  @keyframes fadeUp{ from{ opacity:0; transform:translate3d(0,1.5rem,0);} to{ opacity:1; transform:translate3d(0,0,0);} }
+  .js [data-rv]{ opacity:0; }
+  [data-rv].on{ opacity:1; animation:fadeUp .8s var(--ease) both; animation-delay:calc(var(--i,0) * 85ms); }
+
+  @keyframes float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-14px);} }
+  .fl{ animation:float 7s ease-in-out infinite; }
+  .fl-s{ animation:float 9.5s ease-in-out infinite; }
+  .hero-chip.fl-s{ animation:float 9.5s ease-in-out infinite; }
+
+  @keyframes drift{ 0%{transform:translate(0,0) scale(1);} 50%{transform:translate(34px,-26px) scale(1.12);} 100%{transform:translate(0,0) scale(1);} }
+  .orb{ animation:drift 18s ease-in-out infinite; }
+  .orb-b{ animation:drift 23s ease-in-out infinite reverse; }
+
+  /* animated cyan-mint aurora */
+  .aurora{ position:absolute; inset:-30%; pointer-events:none; opacity:.55;
+    background:
+      radial-gradient(38% 46% at 22% 32%, rgba(0,210,255,.42), transparent 62%),
+      radial-gradient(34% 42% at 74% 28%, rgba(0,255,163,.34), transparent 62%),
+      radial-gradient(46% 50% at 52% 82%, rgba(0,210,255,.22), transparent 66%);
+    filter:blur(70px);
+    animation:aurora 22s ease-in-out infinite alternate; }
+  @keyframes aurora{
+    0%{ transform:translate3d(-3%,-2%,0) scale(1) rotate(0deg); }
+    50%{ transform:translate3d(4%,3%,0) scale(1.12) rotate(6deg); }
+    100%{ transform:translate3d(-2%,4%,0) scale(1.05) rotate(-5deg); }
+  }
+  .sheen{ position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:screen;
+    background:linear-gradient(115deg, transparent 30%, rgba(0,210,255,.14) 45%, rgba(0,255,163,.16) 55%, transparent 70%);
+    background-size:280% 280%;
+    animation:sheen 14s ease-in-out infinite alternate; }
+  @keyframes sheen{ from{ background-position:0% 50%; } to{ background-position:100% 50%; } }
+
+  .noise{ position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.045; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .gridlines{ position:absolute; inset:0; pointer-events:none; opacity:.4;
+    background-image:linear-gradient(rgba(0,255,163,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,210,255,.05) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 72%); }
+
+  .phone{ border-radius:2.6rem; border:1px solid rgba(255,255,255,0.13); background:linear-gradient(170deg,rgba(255,255,255,0.09),rgba(255,255,255,0.01)); padding:.5rem;
+    box-shadow:0 60px 110px -35px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.14); }
+  .phone-in{ border-radius:2.15rem; overflow:hidden; background:#000808; position:relative; }
+  .phone-sm{ border-radius:1.9rem; padding:.3rem; }
+  .phone-sm .phone-in{ border-radius:1.65rem; }
+
+  .prog{ position:fixed; top:0; left:0; height:2px; z-index:70; background:linear-gradient(90deg,var(--cyan),var(--mint)); width:0%; transition:width .12s linear; }
+
+  .mm{ transform:translateY(-10px); opacity:0; pointer-events:none; }
+  .mm.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .mm a{ opacity:0; transform:translateY(1.5rem); transition:all .6s var(--ease); }
+  .mm.open a{ opacity:1; transform:translateY(0); }
+  .burger span{ transition:transform .4s var(--ease), opacity .3s; }
+  .burger.open .l1{ transform:translateY(6.5px) rotate(45deg); }
+  .burger.open .l2{ opacity:0; }
+  .burger.open .l3{ transform:translateY(-6.5px) rotate(-45deg); }
+
+  .toast{ transform:translateY(14px) scale(.96); opacity:0; pointer-events:none; transition:all .5s var(--ease); }
+  .toast.show{ transform:translateY(0) scale(1); opacity:1; }
+
+  .chip.act{ background:linear-gradient(100deg,var(--cyan),var(--mint)); color:#02120d; border-color:transparent; font-weight:600; }
+
+  .shot{ transition:all .6s var(--ease); }
+  .shot:hover{ transform:translateY(-10px); }
+  .shot img{ transition:transform .8s var(--ease); }
+  .shot:hover img{ transform:scale(1.04); }
+
+  .lb{ opacity:0; pointer-events:none; transition:opacity .45s var(--ease); }
+  .lb.open{ opacity:1; pointer-events:auto; }
+  .lb-img{ transform:scale(.94); transition:transform .55s var(--ease); }
+  .lb.open .lb-img{ transform:scale(1); }
+
+  .tilt{ transition:transform .6s var(--ease); transform-style:preserve-3d; }
+
+  .marq{ display:flex; gap:2.5rem; width:max-content; animation:marq 34s linear infinite; }
+  @keyframes marq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .marq-wrap:hover .marq{ animation-play-state:paused; }
+
+  /* journey map */
+  .jm-scroll{ overflow-x:auto; scrollbar-width:thin; }
+  .jm-grid{ display:grid; grid-template-columns:repeat(5, minmax(230px,1fr)); gap:.75rem; min-width:1180px; }
+  .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer;
+    transition:background .4s var(--ease), border-color .4s var(--ease)}
+  .jm-col:hover{ background:rgba(255,255,255,0.05); }
+  .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); }
+  .jm-col:focus-visible{ outline:2px solid var(--mint); outline-offset:2px; }
+
+  .jm-emoji{ display:none; }
+  @keyframes jmFade{ from{ opacity:0; } to{ opacity:1; } }
+
+  /* 태블릿 이상: 아코디언 — 선택한 단계만 펼쳐지고 나머지는 접힘 */
+  @media (min-width:768px){
+    .jm-scroll{ overflow-x:visible; }
+    .jm-curve{ min-width:0 !important; }
+    .jm-grid{ display:flex; gap:.6rem; min-width:0; align-items:stretch; height:38rem; }
+    .jm-col{ flex:1 1 0; min-width:0; padding:1.15rem 1rem; overflow:hidden; display:flex; flex-direction:column; }
+    .jm-col.act{ flex-grow:3.4; }
+    .jm-col .jm-detail{ display:none; }
+    .jm-col.act .jm-detail{ display:block; animation:jmFade .45s var(--ease) both;
+      flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain;
+      scrollbar-width:thin; padding-right:.25rem; }
+    .jm-col:not(.act) h4{ font-size:14px; }
+    .jm-col:not(.act) .jm-emoji{
+      display:flex; align-items:center; justify-content:center;
+      flex:1; min-height:4.5rem; margin-top:1rem;
+      font-size:2.4rem; line-height:1; opacity:.85;
+      transition:transform .4s var(--ease), opacity .4s var(--ease);
+    }
+    .jm-col:not(.act):hover .jm-emoji{ transform:scale(1.12); opacity:1; }
+
+    /* 전체 보기 모드 */
+    .jm-scroll.all{ overflow-x:auto; padding-bottom:.75rem; }
+    .jm-grid.all{ min-width:max-content; height:auto; }
+    .jm-grid.all .jm-col{ flex:0 0 22rem; }
+    .jm-grid.all .jm-detail{ display:block; animation:none; overflow:visible; flex:none; }
+    .jm-grid.all .jm-emoji{ display:none; }
+    .jm-grid.all .jm-col h4{ font-size:15px; }
+  }
+  @media (min-width:1280px){
+    .jm-col.act{ flex-grow:4; }
+    .jm-grid.all .jm-col{ flex:0 0 24rem; }
+  }
+
+
+  /* MVP carousel (light-theme recreation) */
+  .mvp-track{ display:flex; gap:1.15rem; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding:.25rem .25rem 1.25rem; }
+  .mvp-track::-webkit-scrollbar{ display:none; }
+  .mvp-slide{ scroll-snap-align:center; flex:0 0 auto; width:248px; }
+  @media(min-width:640px){ .mvp-slide{ width:264px; } }
+  .mvp-phone{ border-radius:2.2rem; border:1px solid rgba(255,255,255,.13); background:linear-gradient(170deg,rgba(255,255,255,.09),rgba(255,255,255,.01)); padding:.4rem; box-shadow:0 40px 70px -30px rgba(0,0,0,.85); transition:transform .5s var(--ease); }
+  .mvp-slide:hover .mvp-phone{ transform:translateY(-6px); }
+  .mvp-scr{ border-radius:1.85rem; overflow:hidden; background:#FFFFFF; color:#2E2E38; height:500px; display:flex; flex-direction:column; }
+  .mv-status{ display:flex; justify-content:space-between; align-items:center; padding:10px 16px 4px; font-size:9px; color:#9A99A8; }
+  .mv-body{ flex:1; padding:8px 14px 0; overflow:hidden; }
+  .mv-h{ font-size:15px; font-weight:700; line-height:1.35; letter-spacing:-.2px; }
+  .mv-sub{ font-size:9.5px; color:#8A8A9A; }
+  .mv-card{ background:#F4F3FA; border-radius:12px; padding:9px 10px; }
+  .mv-chip{ display:inline-block; border-radius:999px; padding:3px 8px; font-size:8.5px; background:#EDEAFB; color:#5B4CC4; }
+  .mv-chip-o{ display:inline-block; border-radius:999px; padding:3px 8px; font-size:8.5px; background:#F2F1F8; color:#8A8A9A; }
+  .mv-chip-on{ display:inline-block; border-radius:999px; padding:3px 8px; font-size:8.5px; background:#6C5CE0; color:#fff; }
+  .mv-btn{ border-radius:10px; padding:9px; text-align:center; font-weight:700; font-size:10.5px; background:#6C5CE0; color:#fff; }
+  .mv-btn-g{ border-radius:10px; padding:9px; text-align:center; font-weight:700; font-size:10.5px; background:#1E9E6A; color:#fff; }
+  .mv-btn-o{ border-radius:10px; padding:9px; text-align:center; font-weight:700; font-size:10.5px; border:1px solid #C9C2F0; color:#6C5CE0; background:#fff; }
+  .mv-stat{ background:#F4F3FA; border-radius:10px; padding:8px 4px; text-align:center; }
+  .mv-stat b{ display:block; font-size:13px; color:#2E2E38; }
+  .mv-stat span{ font-size:8px; color:#9A99A8; }
+  .mv-tab{ display:flex; justify-content:space-between; padding:9px 18px 12px; border-top:1px solid #EFEEF6; }
+  .mv-tab div{ font-size:8.5px; color:#B4B3C2; text-align:center; }
+  .mv-tab div.on{ color:#6C5CE0; font-weight:700; }
+  .mv-tab i{ display:block; width:9px; height:9px; margin:0 auto 3px; border:1.4px solid currentColor; }
+  .mv-tab .c1 i{ border-radius:50%; }
+  .mv-tab .c2 i{ border-radius:50%; border-width:2.2px; }
+  .mv-tab .c3 i{ transform:rotate(45deg); }
+  .mv-tab .c4 i{ transform:rotate(45deg); border-radius:2px; }
+  .mvp-dot{ width:7px; height:7px; border-radius:99px; background:rgba(255,255,255,.18); transition:all .4s var(--ease); }
+  .mvp-dot.act{ width:22px; background:linear-gradient(90deg,var(--cyan),var(--mint)); }
+
+
+  /* hypothesis carousel */
+  .hyp-track{ display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; padding-bottom:.25rem; }
+  .hyp-track::-webkit-scrollbar{ display:none; }
+  .hyp-slide{ scroll-snap-align:start; flex:0 0 auto; width:86%; }
+  @media(min-width:640px){ .hyp-slide{ width:62%; } }
+  @media(min-width:1024px){ .hyp-slide{ width:calc(50% - .5rem); } }
+
+  /* modal */
+  .md{ opacity:0; pointer-events:none; transition:opacity .45s var(--ease); }
+  .md.open{ opacity:1; pointer-events:auto; }
+  .md-panel{ transform:translateY(24px) scale(.98); transition:transform .55s var(--ease); }
+  .md.open .md-panel{ transform:translateY(0) scale(1); }
+
+  /* nav state switcher */
+  .navbtn.act{ background:linear-gradient(100deg,var(--cyan),var(--mint)); color:#02120d; border-color:transparent; font-weight:600; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition-duration:.01ms !important; }
+    [data-rv]{ opacity:1 !important; }
+  }
+
+  /* hero floating chips: 1024px 미만에서는 숨김 (상단 해시태그와 내용 중복) */
+  .hero-chips{ display:none; }
+  .hero-chip{ border-radius:9999px; border:1px solid var(--line); background:rgba(255,255,255,0.07);
+    -webkit-backdrop-filter:blur(24px); backdrop-filter:blur(24px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.12), 0 25px 50px -12px rgba(0,0,0,.25);
+    padding:.5rem 1rem; }
+  @media (min-width:1024px){
+    .hero-chips{ display:block; }
+    /* 세로 위치는 % 기준: 목업 크기가 바뀌어도 일러스트 영역에만 걸치고
+       상단 타이틀·하단 CTA 영역은 절대 침범하지 않음 */
+    .hero-chip{ position:absolute; padding:.625rem 1rem; white-space:nowrap; }
+    .hero-chip-1{ left:-3.25rem; top:40%; }
+    .hero-chip-2{ right:-2.25rem; top:58%; }
+  }
+
+  /* solution blocks: mobile = text -> mockup -> design point */
+  .sol-grid{ display:grid; }
+  .sol-b{ margin:2.5rem 0; }
+  /* 세로 배치(모바일)에서는 목업 2개를 상단 정렬 — 데스크톱의 계단식 오프셋 해제 */
+  @media (max-width:767px){
+    .sol-b{ align-items:flex-start; }
+    .sol-b > div{ margin-top:0; }
+  }
+  @media (min-width:768px){
+    .sol-grid{ grid-template-columns:1fr 1fr; column-gap:2.5rem; }
+    .sol-a{ grid-column:1; grid-row:1; }
+    .sol-b{ grid-column:2; grid-row:1 / span 2; align-self:center; margin:0; }
+    .sol-c{ grid-column:1; grid-row:2; }
+    .sol-grid.rev .sol-a{ grid-column:2; }
+    .sol-grid.rev .sol-b{ grid-column:1; }
+    .sol-grid.rev .sol-c{ grid-column:2; }
+  }
+  @media (min-width:1024px){ .sol-grid{ column-gap:5rem; } }
+</style>
+</head>
+<body class="bg-night text-ink">
+
+<div class="noise"></div>
+<div class="prog" id="prog"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="fixed top-4 inset-x-0 z-40 flex justify-center px-4">
+  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-2 inset-hl">
+    <a href="#top" class="flex items-center gap-2.5 pl-2 pr-3 py-1 rounded-full hover:bg-white/5 ez">
+      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-7 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-0.5 text-[13px] text-ink/70">
+      <a href="#problem" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">문제 정의</a>
+      <a href="#solution" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">해결 방향</a>
+      <a href="#screens" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">화면</a>
+      <a href="#system" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">디자인 시스템</a>
+      <a href="#retro" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">회고</a>
+    </div>
+    <a href="#contact" class="hidden md:inline-flex btn btn-p items-center gap-2 rounded-full text-[13px] font-semibold pl-5 pr-2 py-2">
+      연락하기
+      <span class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center">
+        <iconify-icon icon="solar:arrow-right-up-linear" class="arw"></iconify-icon>
+      </span>
+    </a>
+    <button id="burger" class="burger md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
+      <span class="l1 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
+      <span class="l2 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
+      <span class="l3 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div id="mm" class="mm ez fixed inset-0 z-30 bg-night/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-7 text-3xl font-display">
+  <a href="#problem" style="transition-delay:60ms" class="kr">문제 정의</a>
+  <a href="#solution" style="transition-delay:120ms" class="kr">해결 방향</a>
+  <a href="#screens" style="transition-delay:180ms" class="kr">화면</a>
+  <a href="#system" style="transition-delay:240ms" class="kr">디자인 시스템</a>
+  <a href="#retro" style="transition-delay:300ms" class="kr">회고</a>
+  <a href="#contact" style="transition-delay:360ms" class="mt-3 text-base font-semibold btn btn-p rounded-full px-7 py-3.5">mary3103@naver.com</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative min-h-[100dvh] flex items-center overflow-hidden pt-32 pb-16">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="aurora"></div>
+    <div class="sheen"></div>
+    <div class="orb absolute -top-40 -left-32 w-[520px] h-[520px] rounded-full" style="background:radial-gradient(circle,rgba(0,210,255,.22),transparent 68%);filter:blur(60px)"></div>
+    <div class="orb-b absolute -bottom-32 right-[-6rem] w-[560px] h-[560px] rounded-full" style="background:radial-gradient(circle,rgba(0,255,163,.18),transparent 68%);filter:blur(70px)"></div>
+    <div class="gridlines"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-8 items-center">
+    <div>
+      <div data-rv style="--i:0" class="inline-flex items-center gap-2 rounded-full hair bg-white/[0.05] backdrop-blur-xl px-3.5 py-1.5 text-[11px] tracking-[0.18em] uppercase text-dim mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-mint1"></span>
+        Anime Pilgrimage Guide App
+      </div>
+
+      <h1 data-rv style="--i:1" class="kr font-display leading-[1.34] sm:leading-[1.3] text-[2.3rem] sm:text-5xl lg:text-[3.6rem] mb-7">
+        애니 속 그 장면,<br><span class="grad-t">직접 가볼 수 있어요</span>
+      </h1>
+
+      <p data-rv style="--i:2" class="kr text-[15px] md:text-lg leading-relaxed text-dim max-w-xl mb-8">
+        작품 속 배경이 된 실제 장소를 찾고, 저장하고, 하루 코스로 완성하는 성지순례 가이드 앱입니다.
+        블로그·지도·커뮤니티를 오가느라 식어버리던 “가보고 싶다”는 마음을
+        하나의 앱 안에서 끝까지 끌고 가도록 설계했습니다.
+      </p>
+
+      <div data-rv style="--i:3" class="flex flex-wrap gap-2 mb-10">
+        <span class="kr text-[13px] rounded-full hair bg-white/[0.05] backdrop-blur-xl px-4 py-2 text-ink/85">#성지순례</span>
+        <span class="kr text-[13px] rounded-full hair bg-white/[0.05] backdrop-blur-xl px-4 py-2 text-ink/85">#장면기반탐색</span>
+        <span class="kr text-[13px] rounded-full hair bg-white/[0.05] backdrop-blur-xl px-4 py-2 text-ink/85">#AI코스생성</span>
+        <span class="kr text-[13px] rounded-full hair bg-white/[0.05] backdrop-blur-xl px-4 py-2 text-ink/85">#순례기록</span>
+      </div>
+
+      <div data-rv style="--i:4" class="flex flex-wrap gap-3 mb-12">
+        <a href="https://www.figma.com/proto/W9qmZTcWxCVCNl4qaSbKSa/anitrip?node-id=22-260&viewport=20%2C231%2C0.2&t=o82E3YkZ9VyTF6Wq-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=22%3A260&page-id=0%3A1"
+           target="_blank" rel="noopener"
+           class="btn btn-p inline-flex items-center gap-2 rounded-full font-semibold pl-7 pr-2 py-2.5 text-[15px]">
+          프로토타입 보기
+          <span class="w-9 h-9 rounded-full bg-black/10 flex items-center justify-center">
+            <iconify-icon icon="solar:play-linear" class="arw text-lg"></iconify-icon>
+          </span>
+        </a>
+      </div>
+
+      <div data-rv style="--i:5" class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-7 border-t border-white/10 text-[13px] text-dim">
+        <span class="kr">UI/UX Design</span>
+        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
+        <span class="kr text-ink font-semibold text-[15px]">송유진</span>
+        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
+        <span class="kr">2개월 · 단독 진행</span>
+        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
+        <span class="kr">Figma · FigJam</span>
+      </div>
+    </div>
+
+    <div data-rv style="--i:3" class="relative flex justify-center lg:justify-end">
+      <div class="fl relative w-[248px] sm:w-[280px]" id="heroTilt">
+        <div class="phone tilt">
+          <div class="phone-in aspect-[402/874]">
+            <img src="assets/landing.webp" alt="ANITRIP 랜딩 화면" class="w-full h-full object-cover object-top">
+          </div>
+        </div>
+        <div class="hero-chips">
+          <div class="hero-chip hero-chip-1 fl-s">
+            <p class="kr text-[12px] font-medium flex items-center gap-1.5">
+              <iconify-icon icon="solar:clapperboard-play-linear" class="text-mint1"></iconify-icon>
+              장면 → 실제 장소
+            </p>
+          </div>
+          <div class="hero-chip hero-chip-2 fl-s" style="animation-delay:1.2s">
+            <p class="kr text-[12px] font-medium flex items-center gap-1.5">
+              <iconify-icon icon="solar:route-linear" class="text-cyan1"></iconify-icon>
+              저장 → 하루 코스
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#problem" class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-dim hover:text-ink ez">
+    <span class="text-[10px] tracking-[0.25em] uppercase">Scroll</span>
+    <iconify-icon icon="solar:alt-arrow-down-linear" class="animate-bounce"></iconify-icon>
+  </a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marq-wrap relative border-y border-white/10 py-5 overflow-hidden">
+  <div class="marq text-dim/70 font-display text-sm uppercase tracking-[0.25em] whitespace-nowrap">
+    <span class="flex gap-10 items-center">
+      <span>Anime Pilgrimage</span><span class="text-mint1">◆</span><span>Scene to Place</span><span class="text-cyan1">◆</span>
+      <span>Diary Research</span><span class="text-mint1">◆</span><span>Journey Map</span><span class="text-cyan1">◆</span>
+      <span>13 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
+    </span>
+    <span class="flex gap-10 items-center" aria-hidden="true">
+      <span>Anime Pilgrimage</span><span class="text-mint1">◆</span><span>Scene to Place</span><span class="text-cyan1">◆</span>
+      <span>Diary Research</span><span class="text-mint1">◆</span><span>Journey Map</span><span class="text-cyan1">◆</span>
+      <span>13 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ PROBLEM / JOURNEY MAP ============ -->
+<section id="problem" class="relative py-24 md:py-32 lg:py-40 overflow-hidden">
+  <div class="absolute top-1/3 -left-40 w-[420px] h-[420px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(0,210,255,.12),transparent 70%);filter:blur(70px)"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-16 items-end mb-14">
+      <div>
+        <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">01 Problem</div>
+        <h2 data-rv style="--i:1; line-height: 1.2;" class="kr text-3xl md:text-4xl lg:text-[2.7rem] font-display leading-[1.45]">
+          감정은 3분,<br>탐색은 <span class="grad-t">3일</span>
+        </h2>
+      </div>
+      <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed max-w-2xl">
+        20~30대 애니 시청자 3명을 대상으로 3일간 다이어리 리서치를 진행했습니다.<br> 세 명 모두 시청 직후 강한 여행 욕구를 보였지만, 단 한 명도 계획 단계까지 도달하지 못했습니다.<br>문제는 “가고 싶은 마음”이 아니라 <span class="text-ink font-semibold">마음과 실행 사이에 낀 탐색 비용</span>이었습니다.
+      </p>
+    </div>
+
+    <!-- designed journey map -->
+    <div data-rv class="shell">
+      <div class="core p-5 sm:p-7 md:p-9">
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-7">
+          <div>
+            <h3 class="kr font-display text-xl mb-1.5">User's Journey Map</h3>
+            <p class="kr text-[13px] text-dim">시청 직후부터 포기까지 · 다이어리 리서치 3일 기반</p>
+          </div>
+          <div class="flex items-center gap-4 flex-wrap">
+            <div class="flex items-center gap-4 text-[11px] text-dim">
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-mint1"></span>Happy</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan1"></span>Neutral</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#FF7E6B]"></span>Unhappy</span>
+            </div>
+            <button id="jmAll" aria-pressed="false" class="hidden md:inline-flex btn items-center gap-1.5 rounded-full hair bg-white/[0.04] text-[12px] font-medium px-3.5 py-2 hover:bg-white/10 hover:border-mint1/40">
+              <iconify-icon icon="solar:widget-5-linear" class="text-base text-mint1"></iconify-icon>
+              <span>전체 보기</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-7">
+          <div class="rounded-2xl hair bg-white/[0.03] p-5">
+            <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-2">페르소나</p>
+            <p class="kr text-[14px] text-ink leading-relaxed mb-1">박준호 · 29세 직장인</p>
+            <p class="kr text-[13px] text-dim leading-relaxed">특정 작품에 애정이 깊어 배경지를 정확히 찾아가고 싶어 한다. 장소를 찾는 것 자체는 익숙하지만, 흩어진 위치를 하나의 동선으로 묶는 데서 막힌다.</p>
+          </div>
+          <div class="rounded-2xl hair bg-white/[0.03] p-5">
+            <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-2">상황</p>
+            <p class="kr text-[14px] text-ink leading-relaxed mb-1">체인소맨을 보고 특정 장면의 배경지가 궁금해졌다. 인스타그램으로 몇 곳을 찾아 저장해뒀고, 사흘 뒤 주말 일정을 짜보려 지도 앱을 열었다.</p>
+          </div>
+          <div class="rounded-2xl hair bg-white/[0.03] p-5">
+            <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-2">목표</p>
+            <p class="kr text-[14px] text-ink leading-relaxed mb-1">저장해둔 성지들을 하루에 돌 수 있는 순서로 묶어 실제로 다녀오고, 작품과 같은 구도로 사진을 남긴다.</p>
+          </div>
+        </div>
+
+        <div class="jm-scroll pb-3" id="jmScroll">
+          <!-- curve -->
+          <div class="jm-curve min-w-[1180px] mb-5">
+            <svg viewBox="0 0 1180 220" class="w-full h-[200px]" aria-label="단계별 감정 변화 곡선">
+              <defs>
+                <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#00FFA3"/><stop offset="55%" stop-color="#00D2FF"/><stop offset="100%" stop-color="#FF7E6B"/>
+                </linearGradient>
+                <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#00FFA3" stop-opacity=".18"/><stop offset="100%" stop-color="#00FFA3" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="60" y1="46" x2="1180" y2="46" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
+              <line x1="60" y1="112" x2="1180" y2="112" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
+              <line x1="60" y1="178" x2="1180" y2="178" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
+              <text x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
+              <text x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
+              <text x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
+              <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
+              <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
+                    fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
+              <g id="dots">
+                <circle class="jd" data-s="0" cx="118" cy="46" r="7" fill="#000808" stroke="#00FFA3" stroke-width="2.5"/>
+                <circle class="jd" data-s="1" cx="354" cy="104" r="7" fill="#000808" stroke="#00D2FF" stroke-width="2.5"/>
+                <circle class="jd" data-s="2" cx="590" cy="132" r="7" fill="#000808" stroke="#00D2FF" stroke-width="2.5"/>
+                <circle class="jd" data-s="3" cx="826" cy="168" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
+                <circle class="jd" data-s="4" cx="1062" cy="190" r="7" fill="#000808" stroke="#FF7E6B" stroke-width="2.5"/>
+              </g>
+              <text x="118" y="26" fill="#00FFA3" font-size="12" text-anchor="middle">설렘 / 기대감</text>
+              <text x="354" y="84" fill="#00D2FF" font-size="12" text-anchor="middle">애매함 / 확신 부족</text>
+              <text x="590" y="112" fill="#00D2FF" font-size="12" text-anchor="middle">만족 → 관심 감소</text>
+              <text x="826" y="148" fill="#FF7E6B" font-size="12" text-anchor="middle">피로 / 스트레스</text>
+              <text x="1062" y="170" fill="#FF7E6B" font-size="12" text-anchor="middle">아쉬움 / 포기</text>
+            </svg>
+          </div>
+
+          <div class="jm-grid" id="jmGrid"></div>
+        </div>
+
+        <p class="kr text-[12px] text-dim mt-4 flex items-center gap-1.5 md:hidden">
+          <iconify-icon icon="solar:arrow-right-linear"></iconify-icon> 좌우로 밀어서 전체 단계를 볼 수 있어요
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 mt-8">
+      <div data-rv class="rounded-[1.75rem] hair bg-white/[0.025] p-7">
+        <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-4">Insight</p>
+        <h4 class="kr font-display text-lg leading-[1.45] mb-3">가장 깊이 빠진 사람이 가장 늦게 포기한다</h4>
+        <p class="kr text-[15px] text-dim leading-relaxed">
+         감정은 탐색 단계에서 처음 꺾이지만, 그 지점에서 이탈하는 사용자는 애초에 여행까지 가지 않는다. 반면 스스로 장소를 찾아내고 저장까지 해낸 사용자는 마지막 단계인 동선 구성에서 멈춘다. 이미 의지를 증명한 사람이 실행 직전에 놓치는 지점이라, 여기를 먼저 이었다.</p>
+      </div>
+      <div data-rv style="--i:1" class="rounded-[1.75rem] hair bg-gradient-to-r from-cyan1/[0.09] to-mint1/[0.07] p-7">
+        <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-4">Problem Statement</p>
+        <p class="kr text-lg md:text-xl font-display leading-[1.45]">
+          애니 속 장소를 찾아내고 저장까지 한 사용자도, 흩어진 장소를 <span class="grad-t">하나의 동선으로 묶는 단계</span>에서 여행을 포기한다
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ TARGET / PERSONA ============ -->
+<section id="target" class="py-24 md:py-32 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">02 Target</div>
+      <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display tracking-tight leading-[1.45] mb-5">
+        “장소”가 아니라 <span class="grad-t">“그 장면”</span>을 찾는 사람들
+      </h2>
+      <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed">
+        인터뷰 대상을 세 유형으로 나눴습니다. 애정의 깊이는 다르지만, 셋 다 단순 관광이 아니라 스토리가 얹힌 경험을 원한다는 공통점이 있었습니다.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+      <article data-rv style="--i:0" class="group shell ez hover:border-mint1/40">
+        <div class="core h-full p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-[11px] uppercase tracking-[0.15em] text-mint1">Primary</span>
+            <span class="w-10 h-10 rounded-full bg-white/[0.06] hair flex items-center justify-center ez group-hover:bg-mint1/15">
+              <iconify-icon icon="solar:camera-linear" class="text-lg text-mint1"></iconify-icon>
+            </span>
+          </div>
+
+          <h3 class="kr font-display text-xl mb-1">성지순례형</h3>
+          <p class="kr text-[13px] text-dim mb-5">29세 · 직장인</p>
+          <p class="kr text-[15px] text-dim leading-relaxed mb-6 flex-1">
+            특정 작품에 대한 애정이 깊어 배경지를 정확히 찾아갑니다. 장소는 잘 찾지만
+            흩어진 위치를 하나의 동선으로 정리하는 데서 막힙니다.
+          </p>
+          <div class="rounded-2xl bg-white/[0.04] hair p-4">
+            <p class="text-[11px] text-dim mb-1.5">니즈</p>
+            <p class="kr text-[13px] leading-relaxed">“저장은 스무 개 해뒀는데, 어디부터 가야 할지를 모르겠어요.”</p>
+          </div>
+
+        </div>
+      </article>
+
+      <article data-rv style="--i:1" class="group shell ez hover:border-mint1/40">
+        <div class="core h-full p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-[11px] uppercase tracking-[0.15em] text-cyan1">Secondary</span>
+            <span class="w-10 h-10 rounded-full bg-white/[0.06] hair flex items-center justify-center ez group-hover:bg-cyan1/15">
+              <iconify-icon icon="solar:map-point-wave-linear" class="text-lg text-cyan1"></iconify-icon>
+            </span>
+          </div>
+
+          <h3 class="kr font-display text-xl mb-1">감성 기록형</h3>
+          <p class="kr text-[13px] text-dim mb-5">26세 · 콘텐츠 마케터</p>
+          <p class="kr text-[15px] text-dim leading-relaxed mb-6 flex-1">
+            장면의 분위기를 사진으로 남기고 싶어 합니다. 인스타그램으로 장소를 저장하지만,
+            계획을 세우는 과정이 번거로워 실제 방문까지 이어지지 않습니다.
+          </p>
+          <div class="rounded-2xl bg-white/[0.04] hair p-4">
+            <p class="text-[11px] text-dim mb-1.5">니즈</p>
+            <p class="kr text-[13px] leading-relaxed">“같은 구도로 사진 찍고 싶어요. 근데 그 골목이 어디인지를 모르겠어요.”</p>
+          </div>
+
+
+        </div>
+      </article>
+
+      <article data-rv style="--i:2" class="group shell ez hover:border-mint1/40 md:col-span-2 lg:col-span-1">
+        <div class="core h-full p-7 flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-[11px] uppercase tracking-[0.15em] text-dim">Tertiary</span>
+            <span class="w-10 h-10 rounded-full bg-white/[0.06] hair flex items-center justify-center ez group-hover:bg-white/10">
+              <iconify-icon icon="solar:compass-linear" class="text-lg text-dim"></iconify-icon>
+            </span>
+          </div>
+          <h3 class="kr font-display text-xl mb-1">라이트 여행자</h3>
+          <p class="kr text-[13px] text-dim mb-5">34세 · 직장인</p>
+          <p class="kr text-[15px] text-dim leading-relaxed mb-6 flex-1">
+            애니를 가볍게 소비하지만 새로운 여행지를 찾습니다. 계획을 짜는 과정 자체를 부담스러워해
+            추천받아 바로 실행할 수 있는 경험을 선호합니다.
+          </p>
+          <div class="rounded-2xl bg-white/[0.04] hair p-4">
+            <p class="text-[11px] text-dim mb-1.5">니즈</p>
+            <p class="kr text-[13px] leading-relaxed">“고민 없이 하루 코스만 딱 짜여 있으면 좋겠어요.”</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <article data-rv style="--i:0" class="group shell ez hover:border-mint1/40 mt-10 md:mt-16">
+        <div class="core h-full p-7 flex flex-col">
+
+          <h3 class="kr font-display text-xl mb-1">
+            왜 성지순례형을 1순위로 두었나</h3>
+          <p class="kr text-[15px] text-dim leading-relaxed mb-6 flex-1">
+           세 유형 중 저장과 계획 단계까지 도달하는 유일한 유형이다. 감성 기록형과 라이트 여행자는 탐색 단계에서 이탈해, 자동 코스 생성 같은 핵심 기능을 쓸 기회 자체가 오지 않는다. 가장 멀리 간 사람의 여정을 기준으로 삼아야 모든 이탈 지점이 관측된다.
+           다만 이 유형은 셋 중 가장 좁다. 성지순례형에게서 검증된 흐름을 감성 기록형까지 넓히는 것이 다음 과제다.
+          </p>
+
+        </div>
+      </article>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section id="solution" class="py-24 md:py-32 border-t border-white/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-16 md:mb-24">
+      <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">03 Solution</div>
+      <h2 data-rv style="--i:1; line-height: 1.2" class="kr text-3xl md:text-4xl lg:text-[2.9rem] font-display tracking-tight leading-[1.45] mb-5">
+        탐색 → 저장 → 실행을<br>한 앱 안에서 끊지 않기
+      </h2>
+      <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed">
+        여정에서 발견한 세 개의 이탈 지점에 각각 하나의 기능을 붙였습니다.
+        기능을 늘리는 대신, 이미 끊긴 곳만 정확히 이었습니다. 
+      </p>
+    </div>
+
+    <!-- 01 -->
+    <div class="sol-grid items-center mb-24 md:mb-32">
+      <div class="sol-a">
+
+        <div data-rv class="flex items-center gap-3 mb-5">
+          <span class="font-display text-3xl leading-none text-white/20">01</span>
+          <span class="kr text-[11px] uppercase tracking-[0.15em] text-mint1">탐색 단계 이탈 해결</span>
+        </div>
+        <h3 data-rv style="--i:1" class="kr text-2xl md:text-3xl font-display leading-[1.45] mb-3">
+          지명이 아니라 <span class="grad-t">장면</span>으로 검색합니다
+        </h3>
+        <p data-rv style="--i:2" class="kr text-[15px] md:text-base text-dim leading-relaxed mb-4 max-w-lg">
+          작품·태그·분위기로 먼저 좁히고, 상세 화면에서 AI 요약이 주소·가까운 역·추천 시간대·등장 작품을
+          한 번에 정리해 줍니다. “여기가 진짜 그 장소인가?”를 확인하려고 앱을 나갈 일이 없도록,
+          작품 속 원본 장면과 방문 후기를 같은 스크롤 안에 배치했습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:1" class="sol-b flex justify-center gap-3 sm:gap-6">
+        <div class="w-[42%] max-w-[210px] mt-10">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/search.webp" alt="성지 발견 탐색 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+              <img src="assets/nav-search.svg" alt="" aria-hidden="true" class="absolute bottom-0 inset-x-0 w-full block">
+            </div>
+          </div>
+        </div>
+        <div class="w-[42%] max-w-[210px]">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/detail.webp" alt="성지 상세 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+              <div class="absolute inset-x-0 bottom-0 px-[5%] pb-[4%]">
+                <img src="assets/cta-location-add.svg" alt="" aria-hidden="true" class="w-full block">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-c">
+<div data-rv style="--i:3" class="rounded-2xl hair bg-white/[0.03] p-5 max-w-lg mb-6">
+          <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-3">설계 포인트</p>
+          <p class="kr text-[14px] text-dim leading-relaxed">
+            상세 화면의 정보 순서를 <span class="text-ink font-semibold">판단 순서</span>에 맞췄습니다.
+            주소와 가까운 역이 먼저(‘어디인가’), 작품 속 원본 장면이 그다음(‘진짜 맞나’),
+            방문 후기가 마지막(‘가볼 만한가’)입니다.
+          </p>
+        </div>
+        <div data-rv style="--i:4" class="flex flex-wrap gap-2">
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">AI 장소 요약</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">작품 속 장면 비교</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">방문 인증 후기</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">추천 시간대</span>
+        </div>
+      </div>
+    </div>
+
+<div class="sol-grid rev items-center mb-24 md:mb-32">
+      <div class="sol-a">
+
+        <div data-rv class="flex items-center gap-3 mb-5">
+          <span class="font-display text-3xl leading-none text-white/20">02</span>
+          <span class="kr text-[11px] uppercase tracking-[0.15em] text-mint1">저장 후 방치 해결</span>
+        </div>
+        <h3 data-rv style="--i:1" class="kr text-2xl md:text-3xl font-display leading-[1.45] mb-3">
+          저장한 성지가 <span class="grad-t">하루 코스</span>가 됩니다
+        </h3>
+        <p data-rv style="--i:2" class="kr text-[15px] md:text-base text-dim leading-relaxed mb-4 max-w-lg">
+          저장 목록에서 성지를 고르면 이동 수단과 소요 시간이 붙은 순서로 자동 정렬됩니다.
+          ‘하루 압축 / 최소 환승 / 도보 위주 / 여유롭게 / 사진 위주’ 다섯 가지 성향 필터로
+          같은 성지 조합에서도 다른 코스가 나오게 했습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:1" class="sol-b flex justify-center gap-3 sm:gap-6">
+        <div class="w-[42%] max-w-[210px]">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/create1.webp" alt="여행 만들기 성지 선택" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+            </div>
+          </div>
+        </div>
+        <div class="w-[42%] max-w-[210px] mt-10">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/create2.webp" alt="AI 코스 생성 결과" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+              <div class="absolute inset-x-0 bottom-0">
+                <div class="px-[5%] pb-[3%]">
+                  <img src="assets/cta-add.svg" alt="" aria-hidden="true" class="w-full block">
+                </div>
+                <img src="assets/nav-create.svg" alt="" aria-hidden="true" class="w-full block">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-c">
+<div data-rv style="--i:3" class="rounded-2xl hair bg-white/[0.03] p-5 max-w-lg mb-6">
+          <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-3">설계 포인트</p>
+          <p class="kr text-[14px] text-dim leading-relaxed">
+            자동 생성 결과를 그대로 확정하지 않고 <span class="text-ink font-semibold">‘내 여행에 추가하기’</span> 한 단계를 남겼습니다.
+            AI가 짠 동선을 사용자가 최종 결정한다는 감각을 유지하기 위해서입니다.
+          </p>
+        </div>
+        <div data-rv style="--i:4" class="flex flex-wrap gap-2">
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">코스 성향 필터</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">동선 자동 정렬</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">이동 시간 계산</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">AI 코멘트</span>
+        </div>
+      </div>
+    </div>
+
+<div class="sol-grid items-center">
+      <div class="sol-a">
+
+        <div data-rv class="flex items-center gap-3 mb-5">
+          <span class="font-display text-3xl leading-none text-white/20">03</span>
+          <span class="kr text-[11px] uppercase tracking-[0.15em] text-mint1">재방문 동기 설계</span>
+        </div>
+        <h3 data-rv style="--i:1" class="kr text-2xl md:text-3xl font-display leading-[1.45] mb-3">
+          다녀온 뒤에도 <span class="grad-t">기록</span>이 남습니다
+        </h3>
+        <p data-rv style="--i:2" class="kr text-[15px] md:text-base text-dim leading-relaxed mb-4 max-w-lg">
+          방문한 성지·정복한 작품·획득 업적을 한 화면에 모으고, 작품별 달성률을 진행 바로 보여줍니다.
+          여행이 끝나면 앱을 지우는 대신, 다음 작품을 정복하러 돌아올 이유를 남기는 구조입니다.
+        </p>
+      </div>
+      <div data-rv style="--i:1" class="sol-b flex justify-center gap-3 sm:gap-6">
+        <div class="w-[42%] max-w-[210px] mt-10">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/travel.webp" alt="내 여행 목록 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+              <img src="assets/nav-travel.svg" alt="" aria-hidden="true" class="absolute bottom-0 inset-x-0 w-full block">
+            </div>
+          </div>
+        </div>
+        <div class="w-[42%] max-w-[210px]">
+          <div class="phone phone-sm">
+            <div class="phone-in aspect-[402/874]">
+              <img src="assets/my.webp" alt="나의 순례 기록 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+              <img src="assets/nav-my.svg" alt="" aria-hidden="true" class="absolute bottom-0 inset-x-0 w-full block">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-c">
+<div data-rv style="--i:3" class="rounded-2xl hair bg-white/[0.03] p-5 max-w-lg mb-6">
+          <p class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-3">설계 포인트</p>
+          <p class="kr text-[14px] text-dim leading-relaxed">
+            작품별 달성률을 <span class="text-ink font-semibold">3/10처럼 미완성 상태</span>로 보여줍니다.
+            방문한 곳의 개수만 세면 기록은 끝난 일이 되지만, 남은 칸이 보이면 다음 방문의 이유가 됩니다.
+            다만 수집을 압박하는 인상이 될 수 있어 진행 바까지만 두고, 알림이나 순위 경쟁은 넣지 않았습니다.
+          </p>
+        </div>
+        <div data-rv style="--i:4" class="grid grid-cols-3 gap-3 max-w-md">
+          <div class="rounded-2xl hair bg-white/[0.03] p-4 text-center">
+            <p class="font-display text-2xl grad-t"><span data-count data-to="10">0</span></p>
+            <p class="kr text-[11px] text-dim mt-1">방문한 성지</p>
+          </div>
+          <div class="rounded-2xl hair bg-white/[0.03] p-4 text-center">
+            <p class="font-display text-2xl grad-t"><span data-count data-to="3">0</span></p>
+            <p class="kr text-[11px] text-dim mt-1">정복한 작품</p>
+          </div>
+          <div class="rounded-2xl hair bg-white/[0.03] p-4 text-center">
+            <p class="font-display text-2xl grad-t"><span data-count data-to="5">0</span></p>
+            <p class="kr text-[11px] text-dim mt-1">획득 업적</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============ SCREENS ============ -->
+<section id="screens" class="py-24 md:py-32 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+      <div class="max-w-xl">
+        <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">04 Screens</div>
+        <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display leading-[1.45] mb-4">
+          13개 화면, 하나의 흐름
+        </h2>
+        <p data-rv style="--i:2" class="kr text-base text-dim leading-relaxed">
+          첫 진입부터 여행 기록까지. 화면을 누르면 원본 크기로 볼 수 있고,
+          <span class="text-ink font-medium">설정</span>의 사이드바는 인터랙션까지 확인할 수 있습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:2" class="flex flex-wrap gap-2" id="filters">
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5 act" data-f="all">전체 13</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="onboarding">온보딩 4</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="discover">탐색 3</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="trip">여행 3</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="record">기록 2</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="setting">설정 1</button>
+      </div>
+    </div>
+
+    <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+
+      <button class="shot g-item group text-left" data-cat="onboarding" data-src="assets/landing.webp" data-cap="#1 랜딩 · 첫 진입">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/landing.webp" alt="랜딩 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">랜딩</p>
+        <p class="kr text-[11px] text-dim mt-0.5">서비스 소개 · 진입 분기</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="onboarding" data-src="assets/login.webp" data-cap="#2 로그인">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/login.webp" alt="로그인 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">로그인</p>
+        <p class="kr text-[11px] text-dim mt-0.5">이메일 · 소셜 3종</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="onboarding" data-src="assets/signup1.webp" data-cap="#3-1 회원가입 · 계정 정보">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/signup1.webp" alt="회원가입 1단계" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">회원가입 ①</p>
+        <p class="kr text-[11px] text-dim mt-0.5">계정 정보 입력</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="onboarding" data-src="assets/signup2.webp" data-cap="#3-2 회원가입 · 취향 선택">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/signup2.webp" alt="회원가입 2단계" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">회원가입 ②</p>
+        <p class="kr text-[11px] text-dim mt-0.5">장르 · 장면 취향 선택</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="discover" data-src="assets/home.webp" data-cap="#4 홈 · 추천 피드">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/home.webp" alt="홈 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">홈</p>
+        <p class="kr text-[11px] text-dim mt-0.5">3단계 가이드 · 추천 코스</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="discover" data-src="assets/search.webp" data-cap="#5-1 성지 발견 · 탐색">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/search.webp" alt="탐색 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">성지 발견</p>
+        <p class="kr text-[11px] text-dim mt-0.5">작품 특집 · 인기순 그리드</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="discover" data-src="assets/detail.webp" data-cap="#5-2 성지 상세 · AI 요약과 후기">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/detail.webp" alt="성지 상세 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">성지 상세</p>
+        <p class="kr text-[11px] text-dim mt-0.5">AI 요약 · 장면 비교 · 후기</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="trip" data-src="assets/create1.webp" data-cap="#6-1 여행 만들기 · 성지 선택">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/create1.webp" alt="여행 만들기 1단계" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">여행 만들기 ①</p>
+        <p class="kr text-[11px] text-dim mt-0.5">폴더 선택 · 순서 편집</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="trip" data-src="assets/create2.webp" data-cap="#6-2 여행 만들기 · AI 코스 결과">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/create2.webp" alt="여행 만들기 2단계" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">여행 만들기 ②</p>
+        <p class="kr text-[11px] text-dim mt-0.5">코스 성향 필터 · AI 코멘트</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="trip" data-src="assets/travel.webp" data-cap="#7 내 여행">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/travel.webp" alt="내 여행 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">내 여행</p>
+        <p class="kr text-[11px] text-dim mt-0.5">D-day · 예정 / 지난 여행</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="record" data-src="assets/archive.webp" data-cap="#8 성지 아카이브">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/archive.webp" alt="성지 아카이브 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">성지 아카이브</p>
+        <p class="kr text-[11px] text-dim mt-0.5">폴더 · 저장한 성지</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="record" data-src="assets/my.webp" data-cap="#9 나의 순례 기록">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/my.webp" alt="나의 순례 기록 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">나의 순례 기록</p>
+        <p class="kr text-[11px] text-dim mt-0.5">달성률 · 여행 후기</p>
+      </button>
+
+      <!-- 설정 · 사이드바 → 인터랙션 모달 -->
+      <button id="sbCard" class="shot group text-left" data-cat="setting">
+        <div class="relative rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/sidebar_open.webp" alt="사이드바가 열린 상태의 화면" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top">
+          <span class="absolute inset-0 bg-night/45 opacity-0 group-hover:opacity-100 ez flex items-center justify-center">
+            <span class="rounded-full grad text-[#02120d] text-[11px] font-semibold px-3.5 py-2 flex items-center gap-1.5">
+              <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon> 인터랙션 열어보기
+            </span>
+          </span>
+        </div>
+        <p class="kr text-[13px] font-medium flex items-center gap-1.5 flex-wrap">
+          사이드바
+          <span class="rounded-full bg-mint1/15 text-mint1 text-[10px] px-2 py-0.5 font-semibold">Interactive</span>
+        </p>
+        <p class="kr text-[11px] text-dim mt-0.5">여행 · 커뮤니티 · 설정</p>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESIGN SYSTEM ============ -->
+<section id="system" class="py-24 md:py-32 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-14">
+      <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">05 — Design System</div>
+      <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display leading-[1.45] mb-5">
+        사진이 주인공인 <span class="grad-t">딥 그린</span> 다크 테마
+      </h2>
+      <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed">
+        화면의 대부분을 성지 사진과 애니 스틸컷이 차지합니다. 배경이 이미지와 채도로 경쟁하지 않도록
+        거의 검정에 가까운 딥 그린(#000808)을 기준색으로 삼고, 시선을 끄는 색은 CTA와 활성 상태 하나로만 남겼습니다.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-6 gap-5">
+      <!-- palette -->
+      <div data-rv class="sm:col-span-6 lg:col-span-4 shell">
+        <div class="core p-6 sm:p-8 h-full">
+          <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
+            <p class="text-[11px] uppercase tracking-[0.15em] text-dim">Color Token</p>
+            <p class="kr text-[12px] text-dim">그라데이션은 화면당 한 번만</p>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div><div class="h-20 rounded-2xl mb-2.5 hair" style="background:#000808"></div><p class="text-[12px] font-semibold">Base</p><p class="text-[11px] text-dim">#000808</p></div>
+            <div><div class="h-20 rounded-2xl mb-2.5 hair" style="background:#101413"></div><p class="text-[12px] font-semibold">Surface</p><p class="text-[11px] text-dim">#101413</p></div>
+            <div><div class="h-20 rounded-2xl mb-2.5" style="background:#00D2FF"></div><p class="text-[12px] font-semibold">Cyan</p><p class="text-[11px] text-dim">#00D2FF</p></div>
+            <div><div class="h-20 rounded-2xl mb-2.5" style="background:#00FFA3"></div><p class="text-[12px] font-semibold">Mint</p><p class="text-[11px] text-dim">#00FFA3</p></div>
+            <div><div class="h-20 rounded-2xl mb-2.5" style="background:#F5FCF8"></div><p class="text-[12px] font-semibold">Ink</p><p class="text-[11px] text-dim">#F5FCF8</p></div>
+            <div><div class="h-20 rounded-2xl mb-2.5" style="background:#8FA69D"></div><p class="text-[12px] font-semibold">Dim</p><p class="text-[11px] text-dim">#8FA69D</p></div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 mt-6">
+            <div class="rounded-2xl bg-white/[0.03] hair p-4">
+              <p class="text-[11px] text-dim mb-2">Gradient · CTA / Active</p>
+              <div class="h-10 rounded-xl grad"></div>
+              <p class="text-[11px] text-dim mt-2">#00D2FF → #00FFA3 · 100deg</p>
+            </div>
+            <div class="rounded-2xl bg-white/[0.03] hair p-4">
+              <p class="text-[11px] text-dim mb-2">Elevation</p>
+              <div class="h-10 rounded-xl hair bg-white/[0.045]"></div>
+              <p class="text-[11px] text-dim mt-2">white 4.5% + hairline 8.5%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- typography -->
+      <div data-rv style="--i:1" class="sm:col-span-3 lg:col-span-2 shell">
+        <div class="core p-7 h-full">
+          <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-6">Typography</p>
+          <div class="space-y-5">
+            <div class="pb-5 border-b border-white/10">
+              <p class="kr font-display text-2xl leading-[1.45] mb-2">애니 속 그 장면</p>
+              <p class="text-[11px] text-dim">Jalnan Gothic · Display / 온보딩 · 헤드라인</p>
+            </div>
+            <div class="pb-5 border-b border-white/10">
+              <p class="kr text-lg font-bold leading-snug mb-2">이 장면, 기억하세요?</p>
+              <p class="text-[11px] text-dim">Paperlogy Bold 700 · Section Title</p>
+            </div>
+            <div class="pb-5 border-b border-white/10">
+              <p class="kr text-[15px] mb-2">작품명이나 장소로 검색해보세요</p>
+              <p class="text-[11px] text-dim">Paperlogy Regular 400 · Body</p>
+            </div>
+            <div>
+              <p class="kr text-[13px] text-dim mb-2">일본 · 에히메현</p>
+              <p class="text-[11px] text-dim">Paperlogy Regular 400 · Caption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- components -->
+      <div data-rv style="--i:2" class="sm:col-span-3 lg:col-span-3 shell">
+        <div class="core p-7 h-full flex flex-col">
+          <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-6">Components</p>
+          <div class="grid lg:grid-cols-2 gap-5 flex-1">
+            <div class="space-y-4">
+              <div>
+                <p class="text-[11px] text-dim mb-2">Primary CTA</p>
+                <div class="grad text-[#02120d] text-[13px] font-semibold rounded-full py-3 text-center">성지 아카이브에 추가하기</div>
+              </div>
+              <div>
+                <p class="text-[11px] text-dim mb-2">Secondary</p>
+                <div class="hair bg-white/[0.03] text-[13px] font-medium rounded-full py-3 text-center">후기 작성하기</div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <p class="text-[11px] text-dim mb-2">Filter Chip</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-[#02120d] text-[12px] font-semibold rounded-full px-3.5 py-1.5" style="background:#00FFA3">인기순</span>
+                  <span class="hair bg-white/[0.05] text-[12px] rounded-full px-3.5 py-1.5">최신순</span>
+                  <span class="hair bg-white/[0.05] text-[12px] rounded-full px-3.5 py-1.5">벚꽃</span>
+                </div>
+              </div>
+              <div>
+                <p class="text-[11px] text-dim mb-2">Tag</p>
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="hair bg-white/[0.03] text-[12px] text-dim rounded-lg px-2.5 py-1">#너의이름은</span>
+                  <span class="hair bg-white/[0.03] text-[12px] text-dim rounded-lg px-2.5 py-1">#첫사랑</span>
+                </div>
+              </div>
+              <div>
+                <p class="text-[11px] text-dim mb-2">Status</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-[#02120d] text-[11px] font-bold rounded-lg px-2 py-1" style="background:#00FFA3">D-30</span>
+                  <span class="inline-flex items-center gap-1 text-[12px] text-mint1"><span class="w-1.5 h-1.5 rounded-full bg-mint1"></span>계획중</span>
+                  <span class="inline-flex items-center gap-1 text-[12px] text-dim"><span class="w-1.5 h-1.5 rounded-full bg-dim"></span>완료</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- navigation -->
+      <div data-rv style="--i:3" class="sm:col-span-6 lg:col-span-3 shell">
+        <div class="core p-7 h-full flex flex-col">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-5">
+            <p class="text-[11px] uppercase tracking-[0.15em] text-dim">Navigation</p>
+            <p class="kr text-[11px] text-dim">탭을 눌러 상태를 확인해보세요</p>
+          </div>
+          <p class="kr text-[14px] text-dim leading-relaxed mb-5">
+            하단 탭 4개 + 가운데 플로팅 버튼. ‘여행 만들기’는 앱의 전환 지점이라 탭 목록에 섞지 않고
+            독립된 액션으로 올렸습니다. 비활성 탭은 라인 아이콘 + 저채도 텍스트,
+            활성 탭은 채워진 아이콘 + 흰색 텍스트로 상태를 구분합니다.
+          </p>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <button class="navbtn kr ez text-[12px] rounded-full hair px-3.5 py-2 hover:bg-white/5 act" data-n="home">홈</button>
+            <button class="navbtn kr ez text-[12px] rounded-full hair px-3.5 py-2 hover:bg-white/5" data-n="search">탐색</button>
+            <button class="navbtn kr ez text-[12px] rounded-full hair px-3.5 py-2 hover:bg-white/5" data-n="create">여행 만들기</button>
+            <button class="navbtn kr ez text-[12px] rounded-full hair px-3.5 py-2 hover:bg-white/5" data-n="travel">여행</button>
+            <button class="navbtn kr ez text-[12px] rounded-full hair px-3.5 py-2 hover:bg-white/5" data-n="my">마이</button>
+          </div>
+
+          <div class="mt-auto rounded-2xl overflow-hidden hair bg-night">
+            <img id="navImg" src="assets/nav-home.svg" alt="하단 네비게이션 · 홈 활성 상태" class="w-full block">
+          </div>
+          <p class="kr text-[11px] text-dim mt-3">실제 제작한 SVG 에셋 · 402 × 80</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MVP ITERATION ============ -->
+<section id="iteration" class="py-24 md:py-32 border-t border-white/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
+      <div class="max-w-2xl">
+        <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">06 — Iteration</div>
+        <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display leading-[1.45] mb-5">
+          MVP에서 잘라낸 것들
+        </h2>
+        <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed">
+          처음 정의한 MVP는 ‘홈 · 탐색 · 코스 · 일기’ 네 개의 탭에, 여섯 개 화면으로 시작했습니다.
+          화면을 늘려가며 확인해보니 코스와 일기가 같은 여행의 앞뒤를 나눠 갖고 있었고,
+          구조를 다시 묶는 과정에서 아래 세 가지를 결정했습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:2" class="flex items-center gap-2 shrink-0">
+        <button id="mvpPrev" class="w-11 h-11 rounded-full hair bg-white/[0.04] flex items-center justify-center ez hover:bg-white/10 hover:border-mint1/40" aria-label="이전 화면">
+          <iconify-icon icon="solar:alt-arrow-left-linear" class="text-lg"></iconify-icon>
+        </button>
+        <button id="mvpNext" class="w-11 h-11 rounded-full hair bg-white/[0.04] flex items-center justify-center ez hover:bg-white/10 hover:border-mint1/40" aria-label="다음 화면">
+          <iconify-icon icon="solar:alt-arrow-right-linear" class="text-lg"></iconify-icon>
+        </button>
+      </div>
+    </div>
+
+    <div data-rv class="relative">
+      <div class="mvp-track" id="mvpTrack">
+
+        <!-- 1. 작품 선택 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div style="background:linear-gradient(135deg,#2B2A55,#3E3A7A);color:#fff;padding:14px 16px 16px">
+                <p style="font-size:9px;letter-spacing:2px;color:#9AE6D0;margin-bottom:10px">ANITRIP</p>
+                <p style="font-size:16px;font-weight:700;line-height:1.35">어떤 애니를<br>보셨나요?</p>
+                <p style="font-size:9.5px;color:#C9C6E8;margin-top:6px">장면 그대로 여행을 시작해요</p>
+              </div>
+              <div class="mv-body">
+                <p class="mv-sub" style="margin-bottom:8px">작품 선택</p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div><div style="height:52px;border-radius:9px;background:#C7BFF0"></div><p style="font-size:10px;font-weight:600;margin-top:5px">스즈메의 문단속</p><p class="mv-sub">2022</p></div>
+                  <div><div style="height:52px;border-radius:9px;background:#A8E6D0"></div><p style="font-size:10px;font-weight:600;margin-top:5px">너의 이름은</p><p class="mv-sub">2016</p></div>
+                  <div><div style="height:52px;border-radius:9px;background:#F5D9A8"></div><p style="font-size:10px;font-weight:600;margin-top:5px">센과 치히로</p><p class="mv-sub">2001</p></div>
+                  <div><div style="height:52px;border-radius:9px;background:#F0A896"></div><p style="font-size:10px;font-weight:600;margin-top:5px">늑대아이</p><p class="mv-sub">2012</p></div>
+                </div>
+                <div style="border:1px dashed #D6D4E4;border-radius:10px;padding:9px;text-align:center;font-size:10px;color:#8A8A9A;margin-top:10px">+ 다른 작품 검색하기</div>
+                <div class="mv-btn" style="margin-top:12px;background:#B6ADEA">장소 찾기 →</div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1 on"><i></i>홈</div><div class="c2"><i></i>탐색</div><div class="c3"><i></i>코스</div><div class="c4"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">① 작품 선택</p>
+          <p class="kr text-[11px] text-dim mt-0.5">감정이 생긴 작품에서 출발</p>
+        </div>
+
+        <!-- 2. 장면 매핑 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div class="mv-status"><span>9:41</span><span>●●●</span></div>
+              <div class="mv-body">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+                  <span style="color:#8A8A9A">←</span>
+                  <div><p style="font-size:13px;font-weight:700">장면 매핑</p><p class="mv-sub">스즈메의 문단속</p></div>
+                </div>
+                <div style="display:flex;gap:5px;margin-bottom:10px">
+                  <span class="mv-chip" style="border:1px solid #6C5CE0">3화 장면</span>
+                  <span class="mv-chip-o">7화 장면</span>
+                  <span class="mv-chip-o">12화 장면</span>
+                </div>
+                <div style="height:58px;border-radius:10px;background:#C7BFF0;margin-bottom:8px"></div>
+                <p style="font-size:10px;color:#6E6D80;font-style:italic;margin-bottom:10px">“성곽이 보이는 야간 산책로”</p>
+                <div class="mv-card">
+                  <div style="display:flex;gap:5px;margin-bottom:6px">
+                    <span class="mv-chip">✓ 검증된 장소</span><span class="mv-chip">98% 일치</span>
+                  </div>
+                  <p style="font-size:12px;font-weight:700">낙산공원 성곽길</p>
+                  <p class="mv-sub" style="margin:3px 0 6px">0.8km · 현재 위치 기준</p>
+                  <div style="display:flex;gap:4px">
+                    <span class="mv-chip-o">야경</span><span class="mv-chip-o">서울</span><span class="mv-chip-o">도보</span>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px">
+                  <div class="mv-stat"><b>47</b><span>방문자 인증</span></div>
+                  <div class="mv-stat"><b>4.8</b><span>감성 평점</span></div>
+                  <div class="mv-stat"><b>0.8km</b><span>현재 거리</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px">
+                  <div class="mv-btn-o">코스에 저장</div><div class="mv-btn">지금 바로 가기 →</div>
+                </div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1 on"><i></i>홈</div><div class="c2"><i></i>탐색</div><div class="c3"><i></i>코스</div><div class="c4"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">② 장면 매핑</p>
+          <p class="kr text-[11px] text-dim mt-0.5">회차별 장면 → 실제 좌표</p>
+        </div>
+
+        <!-- 3. 장소 상세 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div style="background:linear-gradient(135deg,#E9A94E,#F0C070);padding:14px 16px 18px;color:#fff">
+                <span style="display:inline-flex;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.35);align-items:center;justify-content:center;font-size:10px">←</span>
+                <p style="font-size:16px;font-weight:700;margin-top:34px">수안보 온천 마을</p>
+                <p style="font-size:9.5px;opacity:.9;margin-top:4px">150km · 현재 위치 기준</p>
+              </div>
+              <div class="mv-body">
+                <div style="display:flex;gap:5px;margin:2px 0 10px">
+                  <span class="mv-chip">✓ 검증된 장소</span><span class="mv-chip">88% 일치</span><span class="mv-chip-o">온천</span><span class="mv-chip-o">마을</span>
+                </div>
+                <div class="mv-card" style="line-height:1.6;font-size:10px;color:#5C5B6B">
+                  서울 성곽이 보이는 조용한 야간 산책로. 애니 장면과 거의 동일한 구도로 촬영 가능. 특히 저녁 6시 이후 골든아워 시간대를 추천합니다.
+                </div>
+                <div class="mv-card" style="margin-top:8px;background:#EDEAFB;display:flex;gap:8px;align-items:center">
+                  <span style="width:22px;height:22px;border-radius:6px;background:#B6ADEA;flex:none"></span>
+                  <div><p style="font-size:10px;font-weight:700;color:#5B4CC4">추천 촬영 구도</p><p style="font-size:9px;color:#7A76A8">성곽 정면 + 도심 야경 배경</p></div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px">
+                  <div class="mv-stat"><b>63</b><span>방문 인증</span></div>
+                  <div class="mv-stat"><b>4.7</b><span>감성 평점</span></div>
+                  <div class="mv-stat"><b style="font-size:11px">센과 치</b><span>원작 작품</span></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px">
+                  <div class="mv-btn-o">일기 저장</div><div class="mv-btn">코스에 추가</div>
+                </div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1"><i></i>홈</div><div class="c2"><i></i>탐색</div><div class="c3 on"><i></i>코스</div><div class="c4"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">③ 장소 상세</p>
+          <p class="kr text-[11px] text-dim mt-0.5">촬영 구도 · 저장 분기</p>
+        </div>
+
+        <!-- 4. 지도 탐색 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div class="mv-status"><span>9:41</span><span>●●●</span></div>
+              <div class="mv-body">
+                <p style="font-size:13px;font-weight:700;margin-bottom:10px">← 지도 탐색</p>
+                <div style="position:relative;height:112px;border-radius:12px;background:#CFE9D6;margin-bottom:10px">
+                  <span style="position:absolute;top:8px;right:8px;background:#fff;border-radius:99px;font-size:8.5px;padding:3px 8px;color:#5C5B6B">3개 장소</span>
+                  <span style="position:absolute;top:44px;left:62px;width:9px;height:9px;border-radius:50%;background:#6C5CE0"></span>
+                  <span style="position:absolute;top:66px;left:128px;width:9px;height:9px;border-radius:50%;background:#6C5CE0"></span>
+                </div>
+                <div style="display:flex;gap:5px;margin-bottom:10px;overflow:hidden">
+                  <span class="mv-chip-on">전체</span><span class="mv-chip-o">야경</span><span class="mv-chip-o">서울</span><span class="mv-chip-o">도보</span><span class="mv-chip-o">레트로</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:7px">
+                  <div class="mv-card" style="display:flex;gap:8px;align-items:center">
+                    <span style="width:26px;height:26px;border-radius:7px;background:#C7BFF0;flex:none"></span>
+                    <div style="flex:1"><p style="font-size:10.5px;font-weight:700">낙산공원 성곽길</p>
+                      <div style="display:flex;gap:3px;margin-top:4px"><span class="mv-chip">3화</span><span class="mv-chip">야경</span><span class="mv-chip">서울</span></div></div>
+                    <span class="mv-sub">0.8km</span>
+                  </div>
+                  <div class="mv-card" style="display:flex;gap:8px;align-items:center">
+                    <span style="width:26px;height:26px;border-radius:7px;background:#C7BFF0;flex:none"></span>
+                    <div style="flex:1"><p style="font-size:10.5px;font-weight:700">창신동 골목</p>
+                      <div style="display:flex;gap:3px;margin-top:4px"><span class="mv-chip">7화</span><span class="mv-chip">레트로</span><span class="mv-chip">골목</span></div></div>
+                    <span class="mv-sub">1.4km</span>
+                  </div>
+                  <div class="mv-card" style="display:flex;gap:8px;align-items:center">
+                    <span style="width:26px;height:26px;border-radius:7px;background:#C7BFF0;flex:none"></span>
+                    <div style="flex:1"><p style="font-size:10.5px;font-weight:700">인천 수인선 폐역</p>
+                      <div style="display:flex;gap:3px;margin-top:4px"><span class="mv-chip">12화</span><span class="mv-chip">폐역</span><span class="mv-chip">야외</span></div></div>
+                    <span class="mv-sub">38km</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1"><i></i>홈</div><div class="c2 on"><i></i>탐색</div><div class="c3"><i></i>코스</div><div class="c4"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">④ 지도 탐색</p>
+          <p class="kr text-[11px] text-dim mt-0.5">태그 필터 · 거리순 리스트</p>
+        </div>
+
+        <!-- 5. 하루 코스 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div class="mv-status"><span>9:41</span><span>●●●</span></div>
+              <div class="mv-body">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                  <p style="font-size:13px;font-weight:700">← 오늘의 하루 코스</p>
+                  <span class="mv-chip">AI 자동 생성</span>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px">
+                  <div class="mv-stat"><b>1곳</b><span>장소 수</span></div>
+                  <div class="mv-stat"><b style="font-size:11px">도보 35분</b><span>총 이동</span></div>
+                  <div class="mv-stat"><b>6시간</b><span>예상 시간</span></div>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <span style="width:9px;height:9px;border-radius:50%;background:#6C5CE0;margin-top:8px;flex:none"></span>
+                  <div class="mv-card" style="flex:1">
+                    <div style="display:flex;justify-content:space-between;align-items:start">
+                      <p style="font-size:11px;font-weight:700">수안보 온천 마을</p>
+                      <span class="mv-sub">14:00</span>
+                    </div>
+                    <p style="font-size:9.5px;color:#6E6D80;line-height:1.6;margin-top:5px">가장 일치율이 높은 스즈메 3화 배경. 오후 햇살 황금빛.</p>
+                    <p style="font-size:9.5px;color:#5B4CC4;margin-top:6px">→ 도보 10분</p>
+                  </div>
+                </div>
+                <div class="mv-btn-g" style="margin-top:14px">이 코스로 출발 →</div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1"><i></i>홈</div><div class="c2"><i></i>탐색</div><div class="c3 on"><i></i>코스</div><div class="c4"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">⑤ 하루 코스</p>
+          <p class="kr text-[11px] text-dim mt-0.5">자동 생성 · 이동 요약</p>
+        </div>
+
+        <!-- 6. 감성 기록 -->
+        <div class="mvp-slide">
+          <div class="mvp-phone">
+            <div class="mvp-scr">
+              <div class="mv-status"><span>9:41</span><span>●●●</span></div>
+              <div class="mv-body">
+                <p style="font-size:13px;font-weight:700;margin-bottom:12px">← 나의 감성 기록</p>
+                <div style="border:1px dashed #D6D4E4;border-radius:10px;padding:11px;text-align:center;font-size:10px;color:#8A8A9A;margin-bottom:14px">+ 오늘의 방문 기록하기</div>
+                <p style="font-size:9px;color:#B4B3C2;margin-bottom:4px">4월 20일 · 낙산공원</p>
+                <p style="font-size:10.5px;line-height:1.7;margin-bottom:6px">달빛 아래 성곽이 꼭 스즈메 속 장면 같았다. 같은 구도로 찍었더니 소름 돋음.</p>
+                <div class="mv-card" style="background:#EDEAFB;font-size:9px;color:#5B4CC4;margin-bottom:14px">스즈메 3화 장면과 98% 일치</div>
+                <p style="font-size:9px;color:#B4B3C2;margin-bottom:4px">4월 14일 · 창신동 골목</p>
+                <p style="font-size:10.5px;line-height:1.7;margin-bottom:14px">시간이 멈춘 것 같은 골목. 그 분위기 그대로였다. 다음에 또 오고 싶다.</p>
+                <p style="font-size:9px;color:#B4B3C2;margin-bottom:4px">4월 5일 · N서울타워</p>
+                <p style="font-size:10.5px;line-height:1.7;margin-bottom:6px">너의 이름은 속 빛이 이런 느낌이었을까. 마음이 가득 찼다.</p>
+                <div class="mv-card" style="background:#FBEEDD;font-size:9px;color:#A87A32">너의이름은 1화 장면과 96% 일치</div>
+              </div>
+              <div class="mv-tab">
+                <div class="c1"><i></i>홈</div><div class="c2"><i></i>탐색</div><div class="c3"><i></i>코스</div><div class="c4 on"><i></i>일기</div>
+              </div>
+            </div>
+          </div>
+          <p class="kr text-[13px] font-medium mt-4">⑥ 감성 기록</p>
+          <p class="kr text-[11px] text-dim mt-0.5">방문 일기 · 일치율 태그</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-2 mt-2" id="mvpDots"></div>
+      <p class="kr text-[12px] text-dim text-center mt-4">좌우로 스와이프하거나 화살표로 넘겨보세요 · 초기 MVP 정의안 6화면</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mt-14">
+      <div data-rv class="group rounded-[1.75rem] hair bg-white/[0.025] p-7 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full bg-white/[0.06] hair flex items-center justify-center">
+            <iconify-icon icon="solar:widget-5-linear" class="text-mint1"></iconify-icon>
+          </span>
+          <span class="text-[11px] uppercase tracking-[0.15em] text-dim">Structure</span>
+        </div>
+        <h3 class="kr font-display text-[17px] leading-[1.45] mb-3">코스와 일기를 하나의 여행으로</h3>
+        <p class="kr text-[14px] text-dim leading-relaxed">
+          MVP의 ‘코스’ 탭과 ‘일기’ 탭은 사실상 같은 여행의 앞뒤였습니다.
+          최종본에서는 ‘여행’ 탭에서 계획하고 ‘마이’에서 기록을 확인하도록, 기능이 아니라 시점 기준으로 다시 나눴습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:1" class="group rounded-[1.75rem] hair bg-white/[0.025] p-7 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full bg-white/[0.06] hair flex items-center justify-center">
+            <iconify-icon icon="solar:gallery-linear" class="text-mint1"></iconify-icon>
+          </span>
+          <span class="text-[11px] uppercase tracking-[0.15em] text-dim">Visual</span>
+        </div>
+        <h3 class="kr font-display text-[17px] leading-[1.45] mb-3">색면 카드에서 실제 장면으로</h3>
+        <p class="kr text-[14px] text-dim leading-relaxed">
+          MVP에서는 장소를 색면 블록으로 표현했지만, 성지순례의 핵심 경험은 ‘장면을 알아보는 것’입니다.
+          카드의 주인공을 이미지로 바꾸고 텍스트를 그 위에 얹는 구조로 전환했습니다.
+        </p>
+      </div>
+      <div data-rv style="--i:2" class="group rounded-[1.75rem] hair bg-white/[0.025] p-7 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full bg-white/[0.06] hair flex items-center justify-center">
+            <iconify-icon icon="solar:target-linear" class="text-mint1"></iconify-icon>
+          </span>
+          <span class="text-[11px] uppercase tracking-[0.15em] text-dim">Scope</span>
+        </div>
+        <h3 class="kr font-display text-[17px] leading-[1.45] mb-3">‘일치율’ 수치는 보류</h3>
+        <p class="kr text-[14px] text-dim leading-relaxed">
+          MVP에는 장면 일치율(98%)이 있었지만, 계산 근거를 설명할 수 없는 숫자는 신뢰를 오히려 깎습니다.
+          검증 여부와 방문 인증 후기로 대체하고, 수치는 데이터가 쌓인 뒤로 미뤘습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RETRO ============ -->
+<section id="retro" class="py-24 md:py-32 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">07 — Retrospective</div>
+      <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display leading-[1.45] mb-5">
+        아직 검증하지 못한 것들
+      </h2>
+      <p data-rv style="--i:2" class="kr text-base text-dim leading-relaxed lg:whitespace-nowrap">
+        린 캔버스로 가설을 정리했지만, 사용성 테스트까지는 도달하지 못했습니다. 만들면서 스스로 걸렸던 지점을 그대로 남겨둡니다.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[.95fr_1.05fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <div class="space-y-4">
+          <div data-rv style="--i:3" class="group rounded-[1.75rem] hair bg-white/[0.025] p-6 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+            <div class="flex items-start gap-4">
+              <span class="font-display text-xl text-white/15 group-hover:text-mint1/60 ez">01</span>
+              <div>
+                <h3 class="kr font-semibold text-[17px] mb-2">AI 요약을 얼마나 믿을 수 있는가</h3>
+                <p class="kr text-[14px] text-dim leading-relaxed">
+                  장소 신뢰도를 AI 요약으로 해결하려 했지만, 요약이 틀렸을 때의 화면을 아직 그리지 않았습니다.
+                  출처 표기와 ‘정보가 달라요’ 신고 동선이 다음 과제입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div data-rv style="--i:4" class="group rounded-[1.75rem] hair bg-white/[0.025] p-6 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+            <div class="flex items-start gap-4">
+              <span class="font-display text-xl text-white/15 group-hover:text-mint1/60 ez">02</span>
+              <div>
+                <h3 class="kr font-semibold text-[17px] mb-2">데이터가 비어 있는 상태</h3>
+                <p class="kr text-[14px] text-dim leading-relaxed">
+                  모든 화면을 콘텐츠가 가득 찬 상태로만 그렸습니다. 성지가 등록되지 않은 작품,
+                  후기가 0건인 장소 같은 빈 상태 화면이 빠져 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div data-rv style="--i:5" class="group rounded-[1.75rem] hair bg-white/[0.025] p-6 ez hover:border-mint1/35 hover:bg-white/[0.045]">
+            <div class="flex items-start gap-4">
+              <span class="font-display text-xl text-white/15 group-hover:text-mint1/60 ez">03</span>
+              <div>
+                <h3 class="kr font-semibold text-[17px] mb-2">해외 이동 정보의 정확도</h3>
+                <p class="kr text-[14px] text-dim leading-relaxed">
+                  코스 화면의 소요 시간은 디자인용 예시값입니다. 실제로는 노선 데이터 연동이 필요하고,
+                  그 전까지는 ‘예상’이라는 표기를 어떻게 보여줄지 정해야 합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button data-rv class="group w-full text-left rounded-[1.75rem] overflow-hidden hair bg-white/[0.03] p-2 ez hover:border-mint1/40 zoom" data-src="assets/LeanProductCanvas.png" data-cap="Lean Product Canvas v3">
+          <img src="assets/LeanProductCanvas.png" alt="린 프로덕트 캔버스" loading="lazy" decoding="async" class="w-full rounded-[1.4rem] ez group-hover:scale-[1.01]">
+        </button>
+        <div class="flex justify-center mt-4">
+          <button class="btn zoom inline-flex items-center gap-2 rounded-full hair bg-white/[0.04] font-semibold px-5 py-2.5 text-[13px] hover:border-mint1/40 hover:bg-white/[0.08]" data-src="assets/LeanProductCanvas.png" data-cap="Lean Product Canvas v3">
+            <iconify-icon icon="solar:maximize-square-3-linear" class="text-base text-mint1"></iconify-icon>
+            린 캔버스 크게 보기
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- hypothesis carousel -->
+    <div class="mt-14">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-6">
+        <div>
+          <p data-rv class="text-[11px] uppercase tracking-[0.15em] text-mint1 mb-2">Hypotheses</p>
+          <h3 data-rv style="--i:1" class="kr text-xl md:text-2xl font-display leading-[1.45]">검증 순서를 정한 세 개의 가설</h3>
+        </div>
+        <div data-rv style="--i:1" class="flex items-center gap-2">
+          <button id="hypPrev" class="w-11 h-11 rounded-full hair bg-white/[0.04] flex items-center justify-center ez hover:bg-white/10 hover:border-mint1/40" aria-label="이전 가설">
+            <iconify-icon icon="solar:alt-arrow-left-linear" class="text-lg"></iconify-icon>
+          </button>
+          <button id="hypNext" class="w-11 h-11 rounded-full hair bg-white/[0.04] flex items-center justify-center ez hover:bg-white/10 hover:border-mint1/40" aria-label="다음 가설">
+            <iconify-icon icon="solar:alt-arrow-right-linear" class="text-lg"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <div data-rv class="hyp-track" id="hypTrack">
+
+        <article class="hyp-slide">
+          <div class="h-full rounded-[1.75rem] border border-mint1/25 bg-[#0C1614] p-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-[11px] font-bold rounded-md px-2 py-0.5 text-[#02120d]" style="background:#00FFA3">1순위</span>
+              <span class="text-[11px] uppercase tracking-[0.15em] text-mint1">저장 → 일정 전환</span>
+            </div>
+            <p class="kr text-ink text-[16px] md:text-[17px] font-semibold leading-[1.6] mb-6">
+              흩어진 저장 목록을 이동 시간이 붙은 하루 코스로 묶어주면, 사용자는 직접 동선을 짜지 않고 일정을 만들 것이다.
+            </p>
+            <div class="space-y-4 border-t border-white/10 pt-5">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">왜 이것부터인가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">1순위 페르소나는 장소를 찾고 저장하는 데까지는 이미 도달해 있다. 그가 실제로 멈추는 지점은 동선 정리 하나이고, 별도 유입 없이 지금 사용자에게서 바로 관측할 수 있다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">어떻게 확인하는가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">저장 목록만 있는 화면과 자동 코스가 붙은 화면을 나눠 보여주고, 어느 쪽에서 "이대로 출발하겠다"는 결정이 나오는지 비교한다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-[#FF7E6B] mb-1.5">틀렸다고 판단할 조건</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">"내가 직접 순서를 바꾸고 싶다"는 반응이 다수면, 자동 생성이 아니라 편집 도구로 방향을 틀어야 한다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hyp-slide">
+          <div class="h-full rounded-[1.75rem] hair bg-white/[0.03] p-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-[11px] font-bold rounded-md px-2 py-0.5 text-ink bg-white/10">2순위</span>
+              <span class="text-[11px] uppercase tracking-[0.15em] text-dim">장면 → 장소 신뢰</span>
+            </div>
+
+            <p class="kr text-ink text-[16px] md:text-[17px] font-semibold leading-[1.6] mb-6">
+              장면과 실제 장소를 나란히 보여주면, 추가 검색 없이 그 장소를 저장할 것이다.
+            </p>
+            <div class="space-y-4 border-t border-white/10 pt-5">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">왜 두 번째인가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">코스 저장 자체를 유도하는 문제는 대상을 2순위 페르소나까지 넓히는 일이다. 1순위에게서 코스 생성의 가치가 확인된 뒤에 손대야 순서가 꼬이지 않는다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">어떻게 확인하는가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">장면–장소 카드 10장을 보여주고 "여기가 그 장소라고 믿는지, 저장할 의향이 있는지"를 묻는다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-[#FF7E6B] mb-1.5">틀렸다고 판단할 조건</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">"사진만으로는 확신이 안 선다"가 절반을 넘으면, AI 요약이 아니라 출처 표기와 촬영 위치 데이터부터 다시 설계해야 한다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hyp-slide">
+          <div class="h-full rounded-[1.75rem] hair bg-white/[0.03] p-7">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-[11px] font-bold rounded-md px-2 py-0.5 text-ink bg-white/10">3순위</span>
+              <span class="text-[11px] uppercase tracking-[0.15em] text-dim">재방문 동기</span>
+            </div>
+            <p class="kr text-ink text-[16px] md:text-[17px] font-semibold leading-[1.6] mb-6">
+              작품별 달성률을 미완성 상태로 보여주면, 여행이 끝난 뒤에도 다음 성지를 찾아 앱으로 돌아올 것이다.
+            </p>
+            <div class="space-y-4 border-t border-white/10 pt-5">
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">왜 마지막인가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">첫 여행을 다녀온 사용자가 있어야 측정이 가능합니다. 앞의 두 가설이 통과하지 못하면 관측 대상 자체가 생기지 않습니다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-dim mb-1.5">어떻게 확인하는가</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">방문 기록을 남긴 사용자가 1주일 안에 다시 탐색 화면에 들어오는 비율을, 달성률 UI가 있는 그룹과 없는 그룹으로 나눠 봅니다.</p>
+              </div>
+              <div>
+                <p class="text-[11px] uppercase tracking-[0.15em] text-[#FF7E6B] mb-1.5">틀렸다고 판단할 조건</p>
+                <p class="kr text-[14px] text-ink/80 leading-relaxed">달성률이 “숙제처럼 느껴진다”는 반응이 나오면 게이지를 걷어내고, 기록 자체의 완성도로 방향을 바꿔야 합니다.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="flex items-center justify-center gap-2 mt-5" id="hypDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="relative py-28 md:py-40 border-t border-white/10 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="aurora" style="opacity:.4"></div>
+    <div class="gridlines"></div>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-5 sm:px-6 text-center">
+    <div data-rv class="inline-flex items-center gap-2 rounded-full hair bg-white/[0.05] backdrop-blur-xl px-3.5 py-1.5 text-[11px] tracking-[0.18em] uppercase text-dim mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-mint1"></span> Contact
+    </div>
+    <h2 data-rv style="--i:1" class="kr text-[2rem] sm:text-4xl lg:text-5xl font-display leading-[1.45] mb-6">
+      다음 여정도<br class="sm:hidden"> <span class="grad-t">함께 그리고</span> 싶다면
+    </h2>
+    <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed max-w-lg mx-auto mb-10">
+      문제를 화면으로 옮기는 과정을 좋아합니다. <br> 협업이든 채용이든 편하게 연락 주세요.
+    </p>
+    <div data-rv style="--i:3" class="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <button id="copyBtn" class="btn btn-p inline-flex items-center gap-2 rounded-full font-semibold pl-6 pr-2 py-2.5 text-[15px] w-full sm:w-auto justify-center">
+        <iconify-icon icon="solar:letter-linear" class="text-lg"></iconify-icon>
+        mary3103@naver.com
+        <span class="w-9 h-9 rounded-full bg-black/10 flex items-center justify-center">
+          <iconify-icon icon="solar:copy-linear" class="text-lg"></iconify-icon>
+        </span>
+      </button>
+    </div>
+    <p data-rv style="--i:4" class="kr text-[13px] text-dim/80 mt-8">송유진 · UI/UX Designer · 서울 기반 · 원격 협업 가능</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/10 py-10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5">
+    <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-8 w-auto">
+    <p class="kr text-[12px] text-dim text-center max-w-md">ANITRIP은 UI/UX 학습을 위한 개인 프로젝트이며, 등장하는 이미지는 컨셉용 예시입니다.</p>
+    <p class="text-[12px] text-dim/60">© 2026 Song Yujin</p>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lb" class="lb fixed inset-0 z-[55] bg-night/95 backdrop-blur-2xl flex flex-col items-center justify-center p-4 sm:p-8">
+  <button id="lbClose" class="absolute top-5 right-5 w-11 h-11 rounded-full hair bg-white/[0.06] backdrop-blur-xl flex items-center justify-center ez hover:bg-white/15" aria-label="닫기">
+    <iconify-icon icon="solar:close-circle-linear" class="text-xl"></iconify-icon>
+  </button>
+  <button id="lbPrev" class="hidden sm:flex absolute left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full hair bg-white/[0.06] backdrop-blur-xl items-center justify-center ez hover:bg-white/15" aria-label="이전">
+    <iconify-icon icon="solar:alt-arrow-left-linear" class="text-xl"></iconify-icon>
+  </button>
+  <button id="lbNext" class="hidden sm:flex absolute right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full hair bg-white/[0.06] backdrop-blur-xl items-center justify-center ez hover:bg-white/15" aria-label="다음">
+    <iconify-icon icon="solar:alt-arrow-right-linear" class="text-xl"></iconify-icon>
+  </button>
+  <div class="lb-img max-h-[82vh] overflow-y-auto rounded-[1.5rem] hair">
+    <img id="lbImg" src="" alt="" class="max-w-[88vw] sm:max-w-[620px] w-auto block">
+  </div>
+  <p id="lbCap" class="kr text-[13px] text-dim mt-5"></p>
+</div>
+
+<!-- ============ INTERACTION MODAL (사이드바) ============ -->
+<div id="sbModal" class="md fixed inset-0 z-[58] bg-night/95 backdrop-blur-2xl overflow-y-auto">
+  <div class="min-h-full flex items-center justify-center p-4 sm:p-8">
+    <div class="md-panel w-full max-w-4xl shell">
+      <div class="core p-6 sm:p-9 relative">
+        <button id="sbModalClose" class="absolute top-5 right-5 w-10 h-10 rounded-full hair bg-white/[0.06] flex items-center justify-center ez hover:bg-white/15" aria-label="닫기">
+          <iconify-icon icon="solar:close-circle-linear" class="text-xl"></iconify-icon>
+        </button>
+
+        <div class="grid lg:grid-cols-2 gap-9 lg:gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">Interaction · 설정</div>
+            <h3 class="kr text-2xl md:text-3xl font-display leading-[1.45] mb-5">
+              메뉴는 <span class="grad-t">덮지 않고 밀어냅니다</span>
+            </h3>
+            <p class="kr text-[15px] text-dim leading-relaxed mb-7">
+              전체 화면 오버레이 대신 오른쪽에서 밀려 들어오는 드로어를 썼습니다.
+              뒤에 있던 화면이 살짝 남아 있어야 “어디에서 열었는지”를 잃지 않기 때문입니다.
+              메뉴는 여행 · 커뮤니티 · 설정 세 그룹으로만 나눠 계층을 한 단계로 유지했습니다.
+            </p>
+            <ul class="space-y-3.5 mb-8">
+              <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">여행</span> — 성지 아카이브 / 활동 기록 / 획득 업적</span></li>
+              <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">커뮤니티</span> — 성지 제보 / 공지사항 / 문의사항</span></li>
+              <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">설정</span> — 알림 설정 / 계정 설정</span></li>
+            </ul>
+            <button id="sbToggle" class="btn btn-p inline-flex items-center gap-2 rounded-full font-semibold pl-6 pr-2 py-2.5 text-[15px]">
+              <span id="sbLabel">사이드바 닫아보기</span>
+              <span class="w-9 h-9 rounded-full bg-black/10 flex items-center justify-center">
+                <iconify-icon icon="solar:hamburger-menu-linear" class="text-lg"></iconify-icon>
+              </span>
+            </button>
+          </div>
+
+          <div class="flex justify-center">
+            <div class="relative w-[236px] sm:w-[268px]">
+              <div class="phone">
+                <div class="phone-in aspect-[402/874]">
+                  <img id="sbBase" src="assets/my.webp" alt="나의 순례 기록 화면" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top ez">
+                  <img id="sbOpen" src="assets/sidebar_open.webp" alt="사이드바가 열린 화면" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-top ez">
+                </div>
+              </div>
+              <span class="absolute -top-3 -right-3 rounded-full grad text-[#02120d] text-[11px] font-semibold px-3 py-1.5 shadow-lg">눌러서 전환</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[65] rounded-full grad text-[#02120d] text-sm font-semibold px-5 py-3.5 flex items-center gap-2 shadow-2xl">
+  <iconify-icon icon="solar:check-circle-bold" class="text-lg"></iconify-icon>
+  이메일 주소를 복사했어요
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- journey map data ---------- */
+  var stages = [
+    { n:'01', title:'애니 시청 후 여행 욕구 발생', mood:'설렘 / 기대감', color:'#00FFA3',
+      emoji:'😃',
+      quote:'“여기 진짜 존재하는 곳이면 가보고 싶다…”',
+      channels:['넷플릭스','라프텔'],
+      think:'"체인소맨을 보고 특정 장면의 배경이 궁금해짐"',
+      pains:['시청 직후 생긴 관심을 바로 이어갈 곳이 없어 검색부터 다시 시작해야 함','작품 단위로 정리된 장소 목록이 어디에도 없음'],
+      chance:['작품을 선택하면 등장 장소가 한 번에 나오는 진입점'] },
+    { n:'02', title:'SNS 기반 장소 탐색', mood:'애매함 / 확신 부족', color:'#00D2FF',
+      emoji:'🤨',
+      quote:'"찾긴 찾았는데, 이 골목이 진짜 그 장면인지 확신이 안 서네"',
+      channels:['인스타그램','유튜브','블로그'],
+      think:'인스타그램에서 장소 검색',
+      pains:['찾아낸 장소가 정말 그 장면인지 확인할 근거가 없음','정보가 인스타·유튜브·블로그에 흩어져 매번 다시 검색해야 함','작품 정보와 위치 정보가 따로 놀아 연결 작업을 사용자가 함'],
+      chance:['장면 이미지와 실제 장소를 나란히 배치','검증 여부와 방문 인증 후기로 신뢰 근거 제공','작품 기준으로 장소를 묶어 한 곳에 모으기'] },
+    { n:'03', title:'장소 저장 후 방치', mood:'가벼운 만족 → 관심 감소', color:'#00D2FF',
+      emoji:'😐',
+      quote:'“나중에 시간 날 때 정리해야지…”',
+      channels:['인스타 저장함','캡처 앨범'],
+      think:'몇 군데 장소를 저장만 해둠',
+      pains:['저장 이후 다음 행동 유도가 없음','저장한 콘텐츠가 죽은 정보로 남음'],
+      chance:['저장 → 자동으로 여행 계획 전환','다음 행동 유도 (일정 만들기)'] },
+    { n:'04', title:'여행 계획 시도', mood:'피로 / 스트레스', color:'#FF7E6B',
+      emoji:'😫',
+      quote:'“어디부터 가야 하지, 너무 흩어져 있는데?”',
+      channels:['구글 지도','네이버 지도','메모앱'],
+      think:'지도 앱을 열고 동선 짜기 시도',
+      pains:['장소 간 거리 고려가 어려움','일정 구성이 복잡함','시간 대비 효율 판단이 어려움'],
+      chance:['자동 루트 생성','하루 코스 추천','감성이 유지된 일정 구성'] },
+    { n:'05', title:'실행 직전 포기', mood:'아쉬움 / 포기', color:'#FF7E6B',
+      emoji:'😞',
+      quote:'“그냥 다음에 가자…”',
+      channels:[],
+      think:'계획 중단, 앱과 저장 목록 방치',
+      pains:['감정 → 행동으로 연결 실패','초기 설렘이 완전히 사라짐'],
+      chance:['즉시 실행 가능한 여행 경험 제공','최소한의 입력으로 여행 완성'] }
+  ];
+
+  var jmGrid = document.getElementById('jmGrid');
+  function bullets(arr, icon, cls){
+    return arr.map(function(t){
+      return '<li class="kr flex gap-2 text-[13px] text-dim leading-relaxed"><iconify-icon icon="'+icon+'" class="'+cls+' mt-[3px] shrink-0"></iconify-icon><span>'+t+'</span></li>';
+    }).join('');
+  }
+  jmGrid.innerHTML = stages.map(function(s,i){
+    var chips = s.channels.length
+      ? s.channels.map(function(c){
+          return '<span class="kr inline-block rounded-md hair bg-white/[0.04] text-[11px] text-dim px-2 py-1">'+c+'</span>';
+        }).join('')
+      : '<span class="kr text-[13px] text-dim">— 어떤 채널도 실행까지 연결하지 못함</span>';
+    return '<div class="jm-col'+(i===0?' act':'')+'" data-s="'+i+'" role="button" tabindex="0" aria-expanded="'+(i===0)+'">'+
+      '<div class="jm-head">'+
+        '<div class="flex items-center gap-2 mb-3">'+
+          '<span class="font-display text-[11px] tracking-widest" style="color:'+s.color+'">'+s.n+'</span>'+
+          '<span class="h-px flex-1" style="background:'+s.color+'33"></span>'+
+        '</div>'+
+        '<h4 class="kr font-display text-[15px] leading-snug mb-3">'+s.title+'</h4>'+
+        '<span class="kr inline-block rounded-full text-[11px] font-medium px-2.5 py-1" style="color:'+s.color+';background:'+s.color+'1f">'+s.mood+'</span>'+
+      '</div>'+
+      '<div class="jm-emoji" aria-hidden="true">'+s.emoji+'</div>'+
+      '<div class="jm-detail">'+
+        '<p class="kr text-[13px] leading-relaxed border-l-2 pl-3 mt-4 mb-5" style="border-color:'+s.color+'">'+s.quote+'</p>'+
+        '<p class="text-[10px] uppercase tracking-[0.15em] text-dim mb-2">생각 / 행동</p>'+
+        '<p class="kr text-[13px] text-dim leading-relaxed mb-5">'+s.think+'</p>'+
+        '<p class="text-[10px] uppercase tracking-[0.15em] text-dim mb-2">채널</p>'+
+        '<div class="flex flex-wrap gap-1.5 mb-5">'+chips+'</div>'+
+        '<p class="text-[10px] uppercase tracking-[0.15em] text-dim mb-2">문제점</p>'+
+        '<ul class="space-y-2 mb-5">'+bullets(s.pains,'solar:close-circle-linear','text-[#FF7E6B]')+'</ul>'+
+        '<p class="text-[10px] uppercase tracking-[0.15em] text-mint1 mb-2">개선 기회</p>'+
+        '<ul class="space-y-2">'+bullets(s.chance,'solar:lightbulb-linear','text-mint1')+'</ul>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+
+  var cols = jmGrid.querySelectorAll('.jm-col'), dots = document.querySelectorAll('.jd');
+  function setStage(i){
+    cols.forEach(function(c){
+      var on = +c.dataset.s === i;
+      c.classList.toggle('act', on);
+      c.setAttribute('aria-expanded', on);
+    });
+    dots.forEach(function(d){
+      var on = +d.dataset.s === i;
+      d.setAttribute('r', on ? 10 : 7);
+      d.setAttribute('fill', on ? stages[+d.dataset.s].color : '#000808');
+    });
+  }
+  var jmAll = document.getElementById('jmAll'), jmScroll = document.getElementById('jmScroll');
+  if(jmAll){
+    jmAll.addEventListener('click', function(){
+      var on = jmGrid.classList.toggle('all');
+      jmScroll.classList.toggle('all', on);
+      jmAll.setAttribute('aria-pressed', on);
+      jmAll.querySelector('span').textContent = on ? '단계별 보기' : '전체 보기';
+      if(on) jmScroll.scrollTo({ left:0, behavior:'smooth' });
+    });
+  }
+  cols.forEach(function(c){
+    c.addEventListener('click', function(){ setStage(+c.dataset.s); });
+    c.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setStage(+c.dataset.s); }
+    });
+  });
+  dots.forEach(function(d){
+    d.style.cursor = 'pointer';
+    d.addEventListener('click', function(){
+      var i = +d.dataset.s; setStage(i);
+      var col = cols[i], sc = document.getElementById('jmScroll');
+      if(col && sc) sc.scrollTo({ left: col.offsetLeft - 24, behavior:'smooth' });
+    });
+  });
+  setStage(0);
+
+  /* ---------- scroll reveal (observer + scroll fallback) ---------- */
+  var rvEls = document.querySelectorAll('[data-rv]');
+  try {
+    var rvIO = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('on'); rvIO.unobserve(e.target); }
+      });
+    }, { threshold:0, rootMargin:'0px 0px -40px 0px' });
+    rvEls.forEach(function(el){ rvIO.observe(el); });
+  } catch(err){
+    rvEls.forEach(function(el){ el.classList.add('on'); });
+  }
+  var rvTick = false;
+  function rvSweep(){
+    rvTick = false;
+    var vh = window.innerHeight;
+    rvEls.forEach(function(el){
+      if(el.classList.contains('on')) return;
+      var r = el.getBoundingClientRect();
+      if(r.top < vh - 20) el.classList.add('on');
+    });
+  }
+  document.addEventListener('scroll', function(){
+    if(!rvTick){ requestAnimationFrame(rvSweep); rvTick = true; }
+  }, { passive:true });
+  window.addEventListener('resize', rvSweep);
+  window.addEventListener('load', rvSweep);
+  setTimeout(rvSweep, 1200);
+
+  /* ---------- counters ---------- */
+  var cIO = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target, to = parseInt(el.dataset.to,10), start = performance.now(), dur = 1300;
+      (function tick(now){
+        var p = Math.min(1,(now-start)/dur), eased = 1-Math.pow(1-p,3);
+        el.textContent = Math.round(eased*to);
+        if(p<1) requestAnimationFrame(tick);
+      })(start);
+      cIO.unobserve(el);
+    });
+  }, { threshold:0.6 });
+  document.querySelectorAll('[data-count]').forEach(function(el){ cIO.observe(el); });
+
+  /* ---------- scroll progress ---------- */
+  var prog = document.getElementById('prog'), ticking = false;
+  function updateProg(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h>0 ? (window.scrollY/h)*100 : 0) + '%';
+    ticking = false;
+  }
+  document.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(updateProg); ticking = true; }
+  }, { passive:true });
+  updateProg();
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.getElementById('burger'), mm = document.getElementById('mm');
+  function closeMenu(){ burger.classList.remove('open'); mm.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  burger.addEventListener('click', function(){
+    var open = burger.classList.toggle('open');
+    mm.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  /* ---------- gallery filter ---------- */
+  var chips = document.querySelectorAll('.chip'),
+      items = document.querySelectorAll('.g-item'),
+      cards = document.querySelectorAll('#gallery [data-cat]');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('act'); });
+      c.classList.add('act');
+      var f = c.dataset.f;
+      cards.forEach(function(it){ it.style.display = (f === 'all' || it.dataset.cat === f) ? '' : 'none'; });
+    });
+  });
+
+  /* ---------- lightbox ---------- */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'),
+      lbCap = document.getElementById('lbCap'), lbClose = document.getElementById('lbClose'),
+      lbPrev = document.getElementById('lbPrev'), lbNext = document.getElementById('lbNext'), cur = -1;
+  function visibleItems(){ return Array.prototype.filter.call(items, function(i){ return i.style.display !== 'none'; }); }
+  function openLb(src, cap, idx){
+    lbImg.src = src; lbImg.alt = cap; lbCap.textContent = cap;
+    cur = (typeof idx === 'number') ? idx : -1;
+    var nav = cur >= 0 ? 'flex' : 'none';
+    lbPrev.style.display = nav; lbNext.style.display = nav;
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; cur=-1; }
+  function step(dir){
+    var vis = visibleItems(); if(!vis.length || cur < 0) return;
+    cur = (cur + dir + vis.length) % vis.length;
+    lbImg.src = vis[cur].dataset.src; lbCap.textContent = vis[cur].dataset.cap;
+  }
+  items.forEach(function(it){
+    it.addEventListener('click', function(){ openLb(it.dataset.src, it.dataset.cap, visibleItems().indexOf(it)); });
+  });
+  document.querySelectorAll('.zoom').forEach(function(z){
+    z.addEventListener('click', function(){ openLb(z.dataset.src, z.dataset.cap); });
+  });
+  lbClose.addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', function(){ step(-1); });
+  lbNext.addEventListener('click', function(){ step(1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLb();
+    if(e.key === 'ArrowLeft') step(-1);
+    if(e.key === 'ArrowRight') step(1);
+  });
+
+  /* ---------- sidebar interaction modal ---------- */
+  var sbModal = document.getElementById('sbModal'), sbCard = document.getElementById('sbCard'),
+      sbBtn = document.getElementById('sbToggle'), sbOpen = document.getElementById('sbOpen'),
+      sbLabel = document.getElementById('sbLabel'), sbClose = document.getElementById('sbModalClose'),
+      sbState = true;
+  function setSb(on){
+    sbState = on;
+    sbOpen.style.opacity = on ? '1' : '0';
+    sbLabel.textContent = on ? '사이드바 닫아보기' : '사이드바 열어보기';
+  }
+  function openSbModal(){ setSb(true); sbModal.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeSbModal(){ sbModal.classList.remove('open'); document.body.style.overflow=''; }
+  sbCard.addEventListener('click', openSbModal);
+  sbClose.addEventListener('click', closeSbModal);
+  sbModal.addEventListener('click', function(e){ if(e.target === sbModal || e.target.parentElement === sbModal) closeSbModal(); });
+  sbBtn.addEventListener('click', function(){ setSb(!sbState); });
+  sbOpen.parentElement.addEventListener('click', function(){ setSb(!sbState); });
+  sbOpen.parentElement.style.cursor = 'pointer';
+
+  /* ---------- bottom nav state switcher ---------- */
+  var navImg = document.getElementById('navImg'), navSrc = {"home": "assets/nav-home.svg", "search": "assets/nav-search.svg", "create": "assets/nav-create.svg", "travel": "assets/nav-travel.svg", "my": "assets/nav-my.svg"},
+      navLabel = { home:'홈', search:'탐색', create:'여행 만들기', travel:'여행', my:'마이' };
+  document.querySelectorAll('.navbtn').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.navbtn').forEach(function(x){ x.classList.remove('act'); });
+      b.classList.add('act');
+      navImg.src = navSrc[b.dataset.n];
+      navImg.alt = '하단 네비게이션 · ' + navLabel[b.dataset.n] + ' 활성 상태';
+    });
+  });
+
+  /* ---------- generic carousel ---------- */
+  function initCarousel(trackId, slideSel, prevId, nextId, dotsId){
+    var track = document.getElementById(trackId);
+    if(!track) return;
+    var slides = track.querySelectorAll(slideSel);
+    if(!slides.length) return;
+    var dotsWrap = document.getElementById(dotsId), dots = [];
+    if(dotsWrap){
+      slides.forEach(function(_, i){
+        var d = document.createElement('button');
+        d.className = 'mvp-dot' + (i===0 ? ' act' : '');
+        d.setAttribute('aria-label', (i+1)+'번째로 이동');
+        d.addEventListener('click', function(){ goSlide(i); });
+        dotsWrap.appendChild(d);
+      });
+      dots = dotsWrap.querySelectorAll('.mvp-dot');
+    }
+    function maxScroll(){ return track.scrollWidth - track.clientWidth; }
+    function current(){
+      if(track.scrollLeft >= maxScroll() - 2) return slides.length - 1;
+      if(track.scrollLeft <= 2) return 0;
+      var base = slides[0].offsetLeft, best = 0, min = Infinity;
+      slides.forEach(function(sl,i){
+        var d = Math.abs((sl.offsetLeft - base) - track.scrollLeft);
+        if(d < min){ min = d; best = i; }
+      });
+      return best;
+    }
+    function goSlide(i){
+      i = Math.max(0, Math.min(slides.length-1, i));
+      track.scrollTo({ left: Math.min(slides[i].offsetLeft - slides[0].offsetLeft, maxScroll()), behavior:'smooth' });
+    }
+    function syncDots(){
+      if(!dots.length) return;
+      var c = current();
+      dots.forEach(function(d,i){ d.classList.toggle('act', i===c); });
+    }
+    var prev = document.getElementById(prevId), next = document.getElementById(nextId);
+    if(prev) prev.addEventListener('click', function(){ goSlide(current()-1); });
+    if(next) next.addEventListener('click', function(){ goSlide(current()+1); });
+    var st;
+    track.addEventListener('scroll', function(){ clearTimeout(st); st = setTimeout(syncDots, 80); }, { passive:true });
+    window.addEventListener('resize', syncDots);
+    var down=false, sx=0, sl=0;
+    track.addEventListener('mousedown', function(e){ down=true; sx=e.pageX; sl=track.scrollLeft; track.style.cursor='grabbing'; });
+    window.addEventListener('mouseup', function(){ down=false; track.style.cursor=''; });
+    track.addEventListener('mousemove', function(e){
+      if(!down) return;
+      e.preventDefault();
+      track.scrollLeft = sl - (e.pageX - sx);
+    });
+  }
+  initCarousel('mvpTrack', '.mvp-slide', 'mvpPrev', 'mvpNext', 'mvpDots');
+  initCarousel('hypTrack', '.hyp-slide', 'hypPrev', 'hypNext', 'hypDots');
+
+  /* ---------- copy email ---------- */
+  var copyBtn = document.getElementById('copyBtn'), toast = document.getElementById('toast'), tT;
+  copyBtn.addEventListener('click', function(){
+    var mail = 'mary3103@naver.com';
+    function done(){
+      toast.classList.add('show');
+      clearTimeout(tT);
+      tT = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+    }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = mail; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); done(); }catch(err){}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(mail).then(done).catch(fallback);
+    } else { fallback(); }
+  });
+
+  /* ---------- hero tilt ---------- */
+  var tiltWrap = document.getElementById('heroTilt');
+  if(tiltWrap && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var tilt = tiltWrap.querySelector('.tilt');
+    tiltWrap.addEventListener('mousemove', function(e){
+      var r = tiltWrap.getBoundingClientRect();
+      var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+      tilt.style.transform = 'perspective(900px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg)';
+    });
+    tiltWrap.addEventListener('mouseleave', function(){ tilt.style.transform = ''; });
+  }
+
+  /* ---------- nav scroll spy ---------- */
+  var navMap = {
+    problem:'#problem', target:'#problem',
+    solution:'#solution',
+    screens:'#screens',
+    system:'#system',
+    iteration:'#retro', retro:'#retro', contact:'#retro'
+  };
+  var spyLinks = document.querySelectorAll('nav a[href^="#"]');
+  var spySections = Object.keys(navMap)
+    .map(function(id){ return { el: document.getElementById(id), href: navMap[id] }; })
+    .filter(function(o){ return o.el; });
+
+  function setActive(href){
+    spyLinks.forEach(function(a){
+      var on = a.getAttribute('href') === href;
+      a.classList.toggle('font-bold', on);
+      a.classList.toggle('text-ink', on);
+      a.classList.toggle('text-ink/70', !on && a.getAttribute('href') !== '#contact');
+    });
+  }
+  var spyTick = false;
+  function spy(){
+    spyTick = false;
+    var line = window.scrollY + window.innerHeight * 0.32, href = null;
+    spySections.forEach(function(o){
+      if(o.el.offsetTop <= line) href = o.href;
+    });
+    setActive(href);
+  }
+  document.addEventListener('scroll', function(){
+    if(!spyTick){ requestAnimationFrame(spy); spyTick = true; }
+  }, { passive:true });
+  window.addEventListener('resize', spy);
+  spy();
+
+})();
+</script>
+</body>
+</html>
