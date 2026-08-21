@@ -147,6 +147,7 @@
   .jm-col{ border:1px solid var(--line); background:rgba(255,255,255,0.022); border-radius:1.25rem; padding:1.25rem; cursor:pointer; flex:0 0 90%; min-width:0; scroll-snap-align:center;
     transition:background .4s var(--ease), border-color .4s var(--ease)}
   .jm-col:hover{ background:rgba(255,255,255,0.05); }
+  .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); }
   .jm-col:focus-visible{ outline:2px solid var(--mint); outline-offset:2px; }
 
   .jm-emoji{ display:none; }
@@ -155,10 +156,10 @@
   /* 태블릿 이상: 아코디언 — 선택한 단계만 펼쳐지고 나머지는 접힘 */
   @media (min-width:768px){
     .jm-scroll{ overflow-x:visible; }
-    .jm-curve{ min-width:0 !important; }
+    .jm-curve{ width:1180px; min-width:0; }
     .jm-grid{ display:flex; gap:.6rem; min-width:0; align-items:stretch; height:38rem; }
     .jm-col{ flex:1 1 0; min-width:0; padding:1.15rem 1rem; overflow:hidden; display:flex; flex-direction:column; }
-    .jm-col.act{ border-color:rgba(0,255,163,.45); background:rgba(0,255,163,.06); flex-grow:3.4; }
+    .jm-col.act{ flex-grow:3.4; }
     .jm-col .jm-detail{ display:none; }
     .jm-col.act .jm-detail{ display:block; animation:jmFade .45s var(--ease) both;
       flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain;
@@ -283,9 +284,9 @@
 
 <!-- ============ NAV ============ -->
 <nav class="fixed top-4 inset-x-0 z-40 flex justify-center px-4">
-  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-1.5 md:py-2 inset-hl">
+  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-1 md:py-2 inset-hl">
     <a href="#top" class="flex items-center gap-2.5 pl-2 pr-3 py-1 rounded-full hover:bg-white/5 ez">
-      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-6 md:h-7 w-auto">
+      <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-5 md:h-7 w-auto">
     </a>
     <div class="hidden md:flex items-center gap-0.5 text-[13px] text-ink/70">
       <a href="#problem" class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-white/5 ez">문제 정의</a>
@@ -300,7 +301,7 @@
         <iconify-icon icon="solar:arrow-right-up-linear" class="arw"></iconify-icon>
       </span>
     </a>
-    <button id="burger" class="burger md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
+    <button id="burger" class="burger md:hidden w-8 h-8 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
       <span class="l1 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l2 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l3 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
@@ -477,8 +478,8 @@
 
         <div class="jm-scroll pb-3" id="jmScroll">
           <!-- curve -->
-          <div class="jm-curve min-w-[1180px] mb-5">
-            <svg viewBox="0 0 1180 220" class="w-full h-[200px]" aria-label="단계별 감정 변화 곡선">
+          <div class="jm-curve mb-5">
+            <svg viewBox="-30 0 1210 220" class="w-full h-[200px]" aria-label="단계별 감정 변화 곡선">
               <defs>
                 <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stop-color="#00FFA3"/><stop offset="55%" stop-color="#00D2FF"/><stop offset="100%" stop-color="#FF7E6B"/>
@@ -490,9 +491,9 @@
               <line x1="60" y1="46" x2="1180" y2="46" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="112" x2="1180" y2="112" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
               <line x1="60" y1="178" x2="1180" y2="178" stroke="rgba(255,255,255,.08)" stroke-dasharray="3 7"/>
-              <text x="0" y="50" fill="#8FA69D" font-size="12">Happy</text>
-              <text x="0" y="116" fill="#8FA69D" font-size="12">Neutral</text>
-              <text x="0" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
+              <text x="-26" y="50" fill="#8FA69D" font-size="12">Happy</text>
+              <text x="-26" y="116" fill="#8FA69D" font-size="12">Neutral</text>
+              <text x="-26" y="182" fill="#8FA69D" font-size="12">Unhappy</text>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190 L1062,215 L118,215 Z" fill="url(#fg)"/>
               <path d="M118,46 C230,58 260,96 354,104 C450,112 470,124 590,132 C700,140 720,160 826,168 C920,175 960,182 1062,190"
                     fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
@@ -542,7 +543,7 @@
     <div class="max-w-2xl mb-14">
       <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">02 Target</div>
       <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display tracking-tight leading-[1.45] mb-5">
-        “장소”가 아니라 <span class="grad-t">“그 장면”</span>을 찾는 사람들
+        “장소”가 아니라 <span class="grad-t whitespace-nowrap">“그 장면”</span>을 찾는 사람들
       </h2>
       <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed">
         인터뷰 대상을 세 유형으로 나눴습니다. 애정의 깊이는 다르지만, 셋 다 단순 관광이 아니라 스토리가 얹힌 경험을 원한다는 공통점이 있었습니다.
@@ -1760,7 +1761,7 @@
         '<p class="kr text-[13px] text-dim leading-relaxed mb-5">'+s.think+'</p>'+
         '<p class="text-[10px] uppercase tracking-[0.15em] text-dim mb-2">채널</p>'+
         '<div class="flex flex-wrap gap-1.5 mb-5">'+chips+'</div>'+
-        '<p class="text-[10px] uppercase tracking-[0.15em] text-dim mb-2">문제점</p>'+
+        '<p class="text-[10px] uppercase tracking-[0.15em] text-[#FF7E6B] mb-2">문제점</p>'+
         '<ul class="space-y-2 mb-5">'+bullets(s.pains,'solar:close-circle-linear','text-[#FF7E6B]')+'</ul>'+
         '<p class="text-[10px] uppercase tracking-[0.15em] text-mint1 mb-2">개선 기회</p>'+
         '<ul class="space-y-2">'+bullets(s.chance,'solar:lightbulb-linear','text-mint1')+'</ul>'+
@@ -1806,6 +1807,35 @@
     });
   });
   setStage(0);
+
+  /* 모바일: 카드를 스와이프해서 화면 중앙에 오는 카드를 자동으로 활성화 (데스크톱은 overflow-x:visible이라 scroll 이벤트 자체가 안 일어남) */
+  var jmTick = false;
+  function jmSync(){
+    jmTick = false;
+    var wrapRect = jmScroll.getBoundingClientRect(), mid = wrapRect.left + wrapRect.width/2;
+    var best = 0, min = Infinity;
+    cols.forEach(function(c, i){
+      var r = c.getBoundingClientRect(), center = r.left + r.width/2, d = Math.abs(center - mid);
+      if(d < min){ min = d; best = i; }
+    });
+    setStage(best);
+  }
+  jmScroll.addEventListener('scroll', function(){
+    if(!jmTick){ requestAnimationFrame(jmSync); jmTick = true; }
+  }, { passive:true });
+
+  /* 모바일: 그래프 폭을 카드 5장 폭에 정확히 맞춰서 점/라벨이 카드 중앙과 정렬되게 함 */
+  var jmCurve = document.querySelector('.jm-curve');
+  function jmFitCurve(){
+    if(!jmCurve || !cols.length) return;
+    if(window.matchMedia('(min-width:768px)').matches){ jmCurve.style.width = ''; return; }
+    var first = cols[0], last = cols[cols.length - 1];
+    jmCurve.style.width = ((last.offsetLeft + last.offsetWidth) - first.offsetLeft) + 'px';
+  }
+  window.addEventListener('resize', jmFitCurve);
+  window.addEventListener('load', jmFitCurve);
+  setTimeout(jmFitCurve, 1200);
+  jmFitCurve();
 
   /* ---------- scroll reveal (observer + scroll fallback) ---------- */
   var rvEls = document.querySelectorAll('[data-rv]');
