@@ -114,7 +114,7 @@
   .nav-logo{ height:14px; }
   @media (min-width:768px){ .nav-logo{ height:22px; } }
 
-  .nav-bar{ padding-top:2px; padding-bottom:2px; }
+  .nav-bar{ padding-top:4px; padding-bottom:4px; }
   @media (min-width:768px){ .nav-bar{ padding-top:.5rem; padding-bottom:.5rem; } }
 
   .mm{ transform:translateY(-10px); opacity:0; pointer-events:none; }
@@ -307,7 +307,7 @@
         <iconify-icon icon="solar:arrow-right-up-linear" class="arw"></iconify-icon>
       </span>
     </a>
-    <button id="burger" class="burger md:hidden w-7 h-7 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
+    <button id="burger" class="burger md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-full hover:bg-white/5 ez" aria-label="메뉴 열기" aria-expanded="false">
       <span class="l1 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l2 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
       <span class="l3 w-[18px] h-[1.5px] bg-ink rounded-full"></span>
@@ -418,12 +418,12 @@
     <span class="flex gap-10 items-center">
       <span>Anime Pilgrimage</span><span class="text-mint1">◆</span><span>Scene to Place</span><span class="text-cyan1">◆</span>
       <span>Diary Research</span><span class="text-mint1">◆</span><span>Journey Map</span><span class="text-cyan1">◆</span>
-      <span>13 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
+      <span>14 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
     </span>
     <span class="flex gap-10 items-center" aria-hidden="true">
       <span>Anime Pilgrimage</span><span class="text-mint1">◆</span><span>Scene to Place</span><span class="text-cyan1">◆</span>
       <span>Diary Research</span><span class="text-mint1">◆</span><span>Journey Map</span><span class="text-cyan1">◆</span>
-      <span>13 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
+      <span>14 Screens</span><span class="text-mint1">◆</span><span>Design System</span><span class="text-cyan1">◆</span>
     </span>
   </div>
 </div>
@@ -726,6 +726,7 @@
           저장 목록에서 성지를 고르면 이동 수단과 소요 시간이 붙은 순서로 자동 정렬됩니다.
           ‘하루 압축 / 최소 환승 / 도보 위주 / 여유롭게 / 사진 위주’ 다섯 가지 성향 필터로
           같은 성지 조합에서도 다른 코스가 나오게 했습니다.
+          완성된 여행은 여행 상세 화면에서 DAY별로 나눠 다시 확인하고, 동행자와 메모를 공유하며 다듬어갈 수 있습니다.
         </p>
       </div>
       <div data-rv style="--i:1" class="sol-b flex justify-center gap-3 sm:gap-6">
@@ -756,6 +757,8 @@
           <p class="kr text-[14px] text-dim leading-relaxed">
             자동 생성 결과를 그대로 확정하지 않고 <span class="text-ink font-semibold">‘내 여행에 추가하기’</span> 한 단계를 남겼습니다.
             AI가 짠 동선을 사용자가 최종 결정한다는 감각을 유지하기 위해서입니다.
+            성지순례는 혼자보다 동행이 많아, 여행 상세 화면 하단에 <span class="text-ink font-semibold">멤버 공유 메모</span>를 둬서
+            숙소 예약 같은 결정 사항이 대화방이 아니라 여행 화면 안에 남도록 했습니다.
           </p>
         </div>
         <div data-rv style="--i:4" class="flex flex-wrap gap-2">
@@ -763,6 +766,8 @@
           <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">동선 자동 정렬</span>
           <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">이동 시간 계산</span>
           <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">AI 코멘트</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">DAY별 코스 보기</span>
+          <span class="kr text-[13px] rounded-full hair bg-white/[0.04] px-4 py-2 text-ink/85">멤버 공유 메모</span>
         </div>
       </div>
     </div>
@@ -837,7 +842,7 @@
       <div class="max-w-xl">
         <div data-rv class="inline-flex items-center rounded-full bg-mint1/10 text-mint1 px-3 py-1 text-[11px] uppercase tracking-[0.15em] font-medium mb-5">04 Screens</div>
         <h2 data-rv style="--i:1" class="kr text-3xl md:text-4xl font-display leading-[1.45] mb-4">
-          13개 화면, 하나의 흐름
+          14개 화면, 하나의 흐름
         </h2>
         <p data-rv style="--i:2" class="kr text-base text-dim leading-relaxed">
           첫 진입부터 여행 기록까지. 화면을 누르면 원본 크기로 볼 수 있고,
@@ -845,10 +850,10 @@
         </p>
       </div>
       <div data-rv style="--i:2" class="flex flex-wrap gap-2" id="filters">
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5 act" data-f="all">전체 13</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5 act" data-f="all">전체 14</button>
         <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="onboarding">온보딩 4</button>
         <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="discover">탐색 3</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="trip">여행 3</button>
+        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="trip">여행 4</button>
         <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="record">기록 2</button>
         <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="setting">설정 1</button>
       </div>
@@ -934,6 +939,14 @@
         </div>
         <p class="kr text-[13px] font-medium">내 여행</p>
         <p class="kr text-[11px] text-dim mt-0.5">D-day · 예정 / 지난 여행</p>
+      </button>
+
+      <button class="shot g-item group text-left" data-cat="trip" data-src="assets/trip-detail.webp" data-cap="#7-1 여행 상세 · DAY별 코스">
+        <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
+          <img src="assets/trip-detail.webp" alt="여행 상세 화면" loading="lazy" decoding="async" class="w-full h-full object-cover object-top">
+        </div>
+        <p class="kr text-[13px] font-medium">여행 상세</p>
+        <p class="kr text-[11px] text-dim mt-0.5">DAY별 코스 · 멤버 공유 메모</p>
       </button>
 
       <button class="shot g-item group text-left" data-cat="record" data-src="assets/archive.webp" data-cap="#8 성지 아카이브">
