@@ -114,6 +114,9 @@
   .nav-logo{ height:14px; }
   @media (min-width:768px){ .nav-logo{ height:22px; } }
 
+  .nav-bar{ padding-top:2px; padding-bottom:2px; }
+  @media (min-width:768px){ .nav-bar{ padding-top:.5rem; padding-bottom:.5rem; } }
+
   .mm{ transform:translateY(-10px); opacity:0; pointer-events:none; }
   .mm.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
   .mm a{ opacity:0; transform:translateY(1.5rem); transition:all .6s var(--ease); }
@@ -287,7 +290,7 @@
 
 <!-- ============ NAV ============ -->
 <nav class="fixed top-4 inset-x-0 z-40 flex justify-center px-4">
-  <div class="w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 py-0.5 md:py-2 inset-hl">
+  <div class="nav-bar w-full max-w-4xl flex items-center justify-between gap-2 rounded-full hair bg-white/[0.045] backdrop-blur-2xl px-3 inset-hl">
     <a href="#top" class="flex items-center gap-2.5 pl-2 pr-3 py-1 rounded-full hover:bg-white/5 ez">
       <img src="assets/logo.svg" alt="ANITRIP 로고" class="nav-logo w-auto">
     </a>
@@ -1660,7 +1663,7 @@
               메뉴는 여행 · 커뮤니티 · 설정 세 그룹으로만 나눠 계층을 한 단계로 유지했습니다.
             </p>
             <ul class="space-y-3.5 mb-8">
-              <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">여행</span> — 성지 아카이브 / 활동 기록 / 획득 업적</span></li>
+              <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">여행</span> — 여행 리스트(선택 시 내 여행으로 이동) / 성지 아카이브 / 활동 기록 / 획득 업적</span></li>
               <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">커뮤니티</span> — 성지 제보 / 공지사항 / 문의사항</span></li>
               <li class="kr flex gap-3 text-[15px] text-dim"><iconify-icon icon="solar:check-circle-linear" class="text-mint1 mt-0.5 shrink-0"></iconify-icon><span><span class="text-ink font-medium">설정</span> — 알림 설정 / 계정 설정</span></li>
             </ul>
