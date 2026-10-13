@@ -282,6 +282,20 @@
   }
   @media (min-width:1024px){ .sol-grid{ column-gap:5rem; } }
 </style>
+<style>
+/* 다음 작업: 한 줄짜리 얇은 바 */
+.nextbar{border-top:1px solid rgba(255,255,255,.1)}
+.nextbar__in{max-width:80rem;margin:0 auto;padding:22px 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(min-width:1024px){.nextbar__in{padding-inline:2rem}}
+.nextbar__k{font-size:14px;color:rgb(143 166 157)}
+.nextbar__k b{margin-left:8px;font-size:18px;font-weight:700;color:rgb(245 252 248);letter-spacing:-.02em}
+.nextbar__btns{display:flex;gap:8px}
+.nb{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;transition:transform .25s,border-color .25s,color .25s,background-color .25s}
+.nb-line{border:1px solid rgba(255,255,255,.15);color:rgb(245 252 248)}
+.nb-line:hover{border-color:rgb(0 255 163);color:rgb(0 255 163)}
+.nb-fill{background:rgb(0 255 163);color:rgb(0 8 8)}
+.nb:hover{transform:translateY(-1px)}
+</style>
 </head>
 <body class="bg-night text-ink">
 
@@ -1643,6 +1657,15 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
+<div role="navigation" class="nextbar" aria-label="다른 작업">
+  <div class="nextbar__in">
+    <p class="nextbar__k kr">다음 작업 <b>사내 견적서 페이지 개편</b></p>
+    <div class="nextbar__btns kr">
+      <a class="nb nb-line" href="https://mary3103.github.io/">전체 작업</a>
+      <a class="nb nb-fill" href="https://mary3103.github.io/quote/">견적서 개편 보기 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</div>
 <footer class="border-t border-white/10 py-10">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5">
     <img src="assets/logo.svg" alt="ANITRIP 로고" class="h-8 w-auto">
