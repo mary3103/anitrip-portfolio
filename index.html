@@ -248,6 +248,9 @@
     [data-rv]{ opacity:1 !important; }
   }
 
+  .hero-meta{ display:grid; grid-template-columns:repeat(4,max-content); column-gap:44px; row-gap:18px; }
+  .hero-meta dd{ margin:0; }
+  @media (max-width:639px){ .hero-meta{ grid-template-columns:repeat(2,max-content); column-gap:40px; } }
   /* hero floating chips: 1024px 미만에서는 숨김 (상단 해시태그와 내용 중복) */
   .hero-chips{ display:none; }
   .hero-chip{ border-radius:9999px; border:1px solid var(--line); background:rgba(255,255,255,0.07);
@@ -384,15 +387,12 @@
         </a>
       </div>
 
-      <div data-rv style="--i:5" class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-7 border-t border-white/10 text-[13px] text-dim">
-        <span class="kr">UI/UX Design</span>
-        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
-        <span class="kr text-ink font-semibold text-[15px]">송유진</span>
-        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
-        <span class="kr">2개월 · 단독 진행</span>
-        <span class="w-1 h-1 rounded-full bg-dim/50"></span>
-        <span class="kr">Figma · FigJam</span>
-      </div>
+      <dl data-rv style="--i:5" class="hero-meta pt-7 border-t border-white/10">
+        <div><dt class="kr text-[12px] text-dim">작업 기간</dt><dd class="kr mt-1.5 text-[15px] font-semibold text-ink">2개월 · 단독</dd></div>
+        <div><dt class="kr text-[12px] text-dim">역할</dt><dd class="kr mt-1.5 text-[15px] font-semibold text-ink">UI/UX Design</dd></div>
+        <div><dt class="kr text-[12px] text-dim">화면</dt><dd class="kr mt-1.5 text-[15px] font-semibold text-ink">14개</dd></div>
+        <div><dt class="kr text-[12px] text-dim">도구</dt><dd class="kr mt-1.5 text-[15px] font-semibold text-ink">Figma · FigJam</dd></div>
+      </dl>
     </div>
 
     <div data-rv style="--i:3" class="relative flex justify-center lg:justify-end">
@@ -455,7 +455,7 @@
         </h2>
       </div>
       <p data-rv style="--i:2" class="kr text-base md:text-lg text-dim leading-relaxed max-w-2xl">
-        직접 애니 성지순례를 계획하다가 겪은 좌절에서 시작했습니다. 저장해둔 장소는 있었지만 하루 코스로 묶는 과정에서 포기했습니다.<br>주변 애니 시청자들을 관찰해보니 비슷한 패턴이 반복됐습니다. 시청 직후엔 강한 여행 욕구를 보였지만, 계획 단계까지 도달하는 사람은 없었습니다.<br>문제는 “가고 싶은 마음”이 아니라 <span class="text-ink font-semibold">마음과 실행 사이에 낀 탐색 비용</span>이었습니다.
+        직접 애니 성지순례를 계획하다가 겪은 좌절에서 시작했습니다. 저장해둔 장소는 있었지만 하루 코스로 묶는 과정에서 포기했습니다.<br>주변 애니 시청자들을 관찰해보니 비슷한 패턴이 반복됐습니다. 시청 직후엔 강한 여행 욕구를 보였지만, 계획을 끝마친 사람은 없었습니다.<br>문제는 “가고 싶은 마음”이 아니라 <span class="text-ink font-semibold">마음과 실행 사이에 낀 탐색 비용</span>이었습니다.
       </p>
     </div>
 
