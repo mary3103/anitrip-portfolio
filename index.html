@@ -280,6 +280,39 @@
   @media (min-width:1024px) and (prefers-reduced-motion:reduce){
     #top{ height:auto; } .hero-pin{ position:relative; height:100vh; } .hero-band{ display:none; } body.hero-top nav.fixed{ transform:none; opacity:1; pointer-events:auto; }
   }
+
+  /* ---------- 04 Screens : 노선도 단계 내비게이션 ---------- */
+  .route{ position:relative; display:flex; justify-content:space-between; align-items:flex-start; margin:8px 0 52px; padding:0 2%; }
+  .rt-line{ position:absolute; left:calc(2% + 60px); right:calc(2% + 60px + 17%); top:17px; height:3px; background:repeating-linear-gradient(90deg,#24312e 0 10px,transparent 10px 18px); }
+  .rt-line i{ position:absolute; left:0; top:0; bottom:0; width:0; border-radius:3px; background:linear-gradient(90deg,var(--cyan),var(--mint)); box-shadow:0 0 14px rgba(0,255,163,.5); transition:width .6s cubic-bezier(.2,.7,.2,1); }
+  .rt-dash{ position:absolute; right:calc(2% + 60px); width:17%; top:17px; border-top:2px dashed #2d3a37; }
+  .rt-st{ position:relative; z-index:1; width:120px; display:flex; flex-direction:column; align-items:center; background:none; border:0; color:inherit; cursor:pointer; padding:0; }
+  .rt-st .ic{ height:36px; display:flex; align-items:flex-end; padding:0 6px; background:var(--bg); }
+  .rt-st .pin{ width:22px; height:22px; transition:width .35s, height .35s; }
+  .rt-st .pin path{ fill:var(--bg); stroke:#3c4a46; stroke-width:1.6; transition:stroke .3s, fill .3s; }
+  .rt-st .pin circle{ fill:#3c4a46; transition:fill .3s; }
+  .rt-st .mn{ width:18px; height:18px; fill:#5f746c; }
+  .rt-st .sn{ margin-top:12px; font-size:12px; letter-spacing:.12em; font-weight:700; color:#5f746c; transition:color .3s; }
+  .rt-st .sl{ margin-top:4px; font-size:16px; color:var(--dim); transition:color .3s; white-space:nowrap; }
+  .rt-st:hover .sl{ color:var(--ink); }
+  .chip.rt-st.act{ background:none; color:inherit; font-weight:inherit; }
+  .rt-st.done .pin path{ stroke:var(--mint); } .rt-st.done .pin circle{ fill:var(--mint); }
+  .rt-st.act .pin{ width:34px; height:34px; } .rt-st.act .pin path{ fill:url(#rtGrad); stroke:var(--mint); } .rt-st.act .pin circle{ fill:var(--bg); }
+  .rt-st.act .sn{ color:var(--mint); } .rt-st.act .sl{ color:var(--ink); font-weight:700; }
+  .rt-st.br .sl{ font-size:14px; } .rt-st.br.act .mn{ fill:var(--mint); }
+  .stage-gal{ display:flex; flex-wrap:wrap; justify-content:center; gap:28px 26px; }
+  .stage-gal .shot{ width:250px; text-align:center; }
+  .stage-gal .shot p{ justify-content:center; }
+  .stage-gal .shot > p:first-of-type{ font-size:16px; margin-top:6px; }
+  .stage-gal .shot > p:last-of-type{ font-size:13px; margin-top:6px; }
+  .stage-gal .shot img{ transition:object-position 2.4s cubic-bezier(.2,.7,.2,1); }
+  .stage-gal .shot:hover img{ object-position:center bottom; }
+  .stage-gal .shot.in{ animation:fadeUp .6s var(--ease) both; }
+  @media (max-width:640px){
+    .route{ padding:0; margin-bottom:36px; } .rt-st{ width:64px; } .rt-st .sl{ font-size:12px; white-space:normal; text-align:center; }
+    .rt-line{ left:32px; right:calc(32px + 17%); } .rt-dash{ right:32px; }
+    .stage-gal{ gap:22px 14px; } .stage-gal .shot{ width:calc(50% - 7px); }
+  }
   /* hero floating chips: 1024px 미만에서는 숨김 (상단 해시태그와 내용 중복) */
   .hero-chips{ display:none; }
   .hero-chip{ border-radius:9999px; border:1px solid var(--line); background:rgba(255,255,255,0.07);
@@ -881,21 +914,19 @@
           14개 화면, 하나의 흐름
         </h2>
         <p data-rv style="--i:2" class="kr text-base text-dim leading-relaxed">
-          첫 진입부터 여행 기록까지. 화면을 누르면 원본 크기로 볼 수 있고,
-          <span class="text-ink font-medium">설정</span>의 사이드바는 인터랙션까지 확인할 수 있습니다.
+          노선의 정류장을 누르면 단계별 화면이 바뀝니다. 화면을 누르면 원본 크기로 볼 수 있고,
+          <span class="text-ink font-medium">메뉴</span>의 사이드바는 인터랙션까지 확인할 수 있습니다.
         </p>
       </div>
-      <div data-rv style="--i:2" class="flex flex-wrap gap-2" id="filters">
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5 act" data-f="all">전체 14</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="onboarding">온보딩 4</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="discover">탐색 3</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="trip">여행 4</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="record">기록 2</button>
-        <button class="chip kr ez text-[13px] rounded-full hair px-4 py-2.5 hover:bg-white/5" data-f="setting">설정 1</button>
-      </div>
+
     </div>
 
-    <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div data-rv style="--i:2" class="route" id="filters" role="tablist" aria-label="단계별 화면">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rtGrad" x1="0" x2="1"><stop offset="0" stop-color="#00D2FF"/><stop offset="1" stop-color="#00FFA3"/></linearGradient></defs></svg><div class="rt-line" aria-hidden="true"><i id="rtFill"></i></div><div class="rt-dash" aria-hidden="true"></div>
+      <button class="chip rt-st" type="button" data-f="onboarding" data-i="0"><span class="ic"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sn">01</span><span class="sl kr">시작</span></button><button class="chip rt-st" type="button" data-f="discover" data-i="1"><span class="ic"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sn">02</span><span class="sl kr">탐색</span></button><button class="chip rt-st" type="button" data-f="trip" data-i="2"><span class="ic"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sn">03</span><span class="sl kr">여행 만들기</span></button><button class="chip rt-st" type="button" data-f="record" data-i="3"><span class="ic"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span><span class="sn">04</span><span class="sl kr">기록</span></button><button class="chip rt-st br" type="button" data-f="setting"><span class="ic"><svg class="mn" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="2" rx="1"/><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="4" y="17" width="16" height="2" rx="1"/></svg></span><span class="sn">+</span><span class="sl kr">메뉴</span></button>
+    </div>
+
+    <div id="gallery" class="stage-gal">
 
       <button class="shot g-item group text-left" data-cat="onboarding" data-src="assets/landing.webp" data-cap="#1 랜딩 · 첫 진입">
         <div class="rounded-[1.5rem] overflow-hidden hair bg-surface aspect-[402/874] mb-3">
@@ -2033,10 +2064,13 @@
     c.addEventListener('click', function(){
       chips.forEach(function(x){ x.classList.remove('act'); });
       c.classList.add('act');
-      var f = c.dataset.f;
-      cards.forEach(function(it){ it.style.display = (f === 'all' || it.dataset.cat === f) ? '' : 'none'; });
+      var f = c.dataset.f, idx = c.dataset.i !== undefined ? +c.dataset.i : 4;
+      chips.forEach(function(x){ x.classList.toggle('done', x.dataset.i !== undefined && +x.dataset.i < idx); x.setAttribute('aria-selected', x === c ? 'true' : 'false'); });
+      var fill = document.getElementById('rtFill'); if(fill) fill.style.width = (Math.min(idx,3) / 3 * 100) + '%';
+      cards.forEach(function(it){ var on = it.dataset.cat === f; it.style.display = on ? '' : 'none'; it.classList.remove('in'); if(on){ void it.offsetWidth; it.classList.add('in'); } });
     });
   });
+  if(chips.length) chips[0].click();
 
   /* ---------- lightbox ---------- */
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'),
