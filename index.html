@@ -263,10 +263,10 @@
       -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%); }
     .hero-band{ top:0; bottom:0; transform:scale(var(--bs,1)); -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%); }
     .hb-track{ position:absolute; left:50%; top:47%; width:0; height:0; }
-    .hb-card{ position:absolute; left:-130px; top:-115px; width:260px; margin:0; will-change:transform,filter; }
-    .hb-card img{ display:block; height:200px !important; border-radius:16px; box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 30px 60px -30px rgba(0,0,0,.8); }
+    .hb-card{ position:absolute; left:-170px; top:-155px; width:340px; margin:0; will-change:transform,filter; }
+    .hb-card img{ display:block; height:280px !important; border-radius:16px; box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 30px 60px -30px rgba(0,0,0,.8); }
     .hb-card img{ width:100%; height:100%; object-fit:cover; filter:saturate(.9) brightness(.78); }
-    .hb-card figcaption{ margin-top:12px; padding-left:2px; font-size:14px; font-weight:600; color:#F5FCF8; letter-spacing:-.01em; }
+    .hb-card figcaption{ margin-top:12px; text-align:center; font-size:14px; font-weight:600; color:#F5FCF8; letter-spacing:-.01em; }
     .hero-grid{ z-index:1; }
     .hero-hand{ display:block; position:absolute; z-index:2; width:min(820px,80vh); left:calc(50% - min(820px,80vh) * .36); top:calc(4rem + 1vh); height:auto; pointer-events:none;
       filter:drop-shadow(0 40px 80px rgba(0,0,0,.6)); will-change:transform,opacity; }
@@ -2186,8 +2186,8 @@
   (function(){
     var track = document.querySelector('.hb-track');
     if(!track || !window.matchMedia('(min-width:1024px)').matches) return;
-    var all = [].slice.call(track.children), cards = all.slice(0, 15), n = cards.length, step = 360 / n;
-    all.slice(15).forEach(function(c){ c.style.display = 'none'; });
+    var all = [].slice.call(track.children), cards = all.slice(0, 13), n = cards.length, step = 360 / n;
+    all.slice(13).forEach(function(c){ c.style.display = 'none'; });
     var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var t0 = performance.now(), PERIOD = 90000;       // 한 바퀴 90초
     function frame(now){
