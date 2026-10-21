@@ -251,6 +251,30 @@
   .hero-meta{ display:grid; grid-template-columns:repeat(4,max-content); column-gap:72px; row-gap:18px; }
   .hero-meta dd{ margin:0; }
   @media (max-width:639px){ .hero-meta{ grid-template-columns:repeat(2,max-content); column-gap:40px; } }
+
+  /* ---------- PC 히어로 (1024px 이상) : 장면 카드 루프 → 스크롤하면 폰이 오른쪽으로, 소개가 왼쪽에서 ---------- */
+  .hero-pin{ width:100%; display:flex; align-items:center; }
+  .hero-band{ display:none; }
+  @media (min-width:1024px){
+    #top{ display:block; height:230vh; min-height:0; padding:0; overflow:visible; }
+    .hero-pin{ position:sticky; top:0; height:100vh; overflow:hidden; padding-top:4.5rem; }
+    .hero-band{ display:block; position:absolute; left:0; right:0; top:50%; transform:translateY(-38%); z-index:0; pointer-events:none;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%); }
+    .hb-track{ display:flex; gap:22px; width:max-content; animation:marq 60s linear infinite; }
+    .hb-card{ position:relative; flex:0 0 280px; height:234px; margin:0; border-radius:18px; overflow:hidden; box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 30px 60px -30px rgba(0,0,0,.8); }
+    .hb-card img{ width:100%; height:100%; object-fit:cover; filter:saturate(.9) brightness(.78); }
+    .hb-card figcaption{ position:absolute; left:14px; bottom:12px; font-size:13px; font-weight:600; color:#F5FCF8; background:rgba(0,8,8,.6); padding:5px 10px; border-radius:9999px; }
+    .hero-grid{ z-index:1; }
+    #top .hero-phone[data-rv]{ animation:none; opacity:1; }
+    .hero-copy, .hero-phone, .hero-band, .hero-cue{ will-change:transform,opacity; }
+    nav.fixed{ transition:transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease; }
+    body.hero-top nav.fixed{ transform:translateY(-140%); opacity:0; pointer-events:none; }
+    /* 조명 : 스크롤에 따라 살짝 따라 움직인다 */
+    .hero-pin > .absolute.inset-0{ transform:translate3d(calc(var(--hp,0) * -5%),calc(var(--hp,0) * 3%),0) scale(1.14); }
+  }
+  @media (min-width:1024px) and (prefers-reduced-motion:reduce){
+    #top{ height:auto; } .hero-pin{ position:relative; height:100vh; } .hero-band{ display:none; } body.hero-top nav.fixed{ transform:none; opacity:1; pointer-events:auto; }
+  }
   /* hero floating chips: 1024px 미만에서는 숨김 (상단 해시태그와 내용 중복) */
   .hero-chips{ display:none; }
   .hero-chip{ border-radius:9999px; border:1px solid var(--line); background:rgba(255,255,255,0.07);
@@ -344,6 +368,8 @@
 
 <!-- ============ HERO ============ -->
 <section id="top" class="relative min-h-[100dvh] flex items-center overflow-hidden pt-32 pb-16">
+<div class="hero-pin">
+  <div class="hero-band" aria-hidden="true"><div class="hb-track"><figure class="hb-card"><img src="assets/scenes/s1.webp" alt="" loading="eager"><figcaption>스가 신사 계단</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s2.webp" alt="" loading="eager"><figcaption>가마쿠라코코마에역</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s3.webp" alt="" loading="eager"><figcaption>히지리바시 다리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s4.webp" alt="" loading="eager"><figcaption>아키하바라 전자상가</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s5.webp" alt="" loading="eager"><figcaption>시모키타자와 거리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s6.webp" alt="" loading="eager"><figcaption>신주쿠 교엔</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s7.webp" alt="" loading="eager"><figcaption>니시노미야 신사</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s8.webp" alt="" loading="eager"><figcaption>시치리가하마 언덕길</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s9.webp" alt="" loading="eager"><figcaption>구사쓰 온천 유바타케</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s1.webp" alt="" loading="eager"><figcaption>스가 신사 계단</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s2.webp" alt="" loading="eager"><figcaption>가마쿠라코코마에역</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s3.webp" alt="" loading="eager"><figcaption>히지리바시 다리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s4.webp" alt="" loading="eager"><figcaption>아키하바라 전자상가</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s5.webp" alt="" loading="eager"><figcaption>시모키타자와 거리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s6.webp" alt="" loading="eager"><figcaption>신주쿠 교엔</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s7.webp" alt="" loading="eager"><figcaption>니시노미야 신사</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s8.webp" alt="" loading="eager"><figcaption>시치리가하마 언덕길</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s9.webp" alt="" loading="eager"><figcaption>구사쓰 온천 유바타케</figcaption></figure></div></div>
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="aurora"></div>
     <div class="sheen"></div>
@@ -352,8 +378,8 @@
     <div class="gridlines"></div>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-8 items-center">
-    <div>
+  <div class="hero-grid relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-8 items-center">
+    <div class="hero-copy">
       <div data-rv style="--i:0" class="inline-flex items-center gap-2 rounded-full hair bg-white/[0.05] backdrop-blur-xl px-3.5 py-1.5 text-[11px] tracking-[0.18em] uppercase text-dim mb-7">
         <span class="w-1.5 h-1.5 rounded-full bg-mint1"></span>
         Anime Pilgrimage Guide App
@@ -384,7 +410,7 @@
       </dl>
     </div>
 
-    <div data-rv style="--i:3" class="relative flex justify-center lg:justify-end">
+    <div data-rv style="--i:3" class="hero-phone relative flex justify-center lg:justify-end">
       <div class="fl relative w-[248px] sm:w-[280px]" id="heroTilt">
         <div class="phone tilt">
           <div class="phone-in aspect-[402/874]">
@@ -409,10 +435,11 @@
     </div>
   </div>
 
-  <a href="#problem" class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-dim hover:text-ink ez">
+  <a href="#problem" class="hero-cue hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-dim hover:text-ink ez">
     <span class="text-[10px] tracking-[0.25em] uppercase">Scroll</span>
     <iconify-icon icon="solar:alt-arrow-down-linear" class="animate-bounce"></iconify-icon>
   </a>
+</div>
 </section>
 
 <!-- ============ MARQUEE ============ -->
@@ -2147,6 +2174,50 @@
     } else { fallback(); }
   });
 
+
+  /* ---------- PC 히어로 : 스크롤 연출 ---------- */
+  (function(){
+    var mq = window.matchMedia('(min-width:1024px)'), rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var sec = document.getElementById('top');
+    if(!sec) return;
+    var copy = sec.querySelector('.hero-copy'), phone = sec.querySelector('.hero-phone'),
+        band = sec.querySelector('.hero-band'), cue = sec.querySelector('.hero-cue'),
+        light = sec.querySelector('.hero-pin > .absolute.inset-0');
+    var dx = 0;
+    function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+    function ease(t){ return t < .5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2; }
+    function measure(){
+      phone.style.transform = '';
+      var r = phone.querySelector('#heroTilt').getBoundingClientRect();
+      dx = window.innerWidth/2 - (r.left + r.width/2);
+      update();
+    }
+    function reset(){
+      [copy, phone, band, cue].forEach(function(el){ if(el){ el.style.transform=''; el.style.opacity=''; } });
+      document.body.classList.remove('hero-top');
+    }
+    function update(){
+      if(!mq.matches || rm.matches){ reset(); return; }
+      var travel = sec.offsetHeight - window.innerHeight;
+      var p = clamp(window.scrollY / (travel * .7));
+      var e = ease(p);
+      phone.style.transform = 'translate3d(' + (dx*(1-e)) + 'px,0,0) scale(' + (1.12 - .12*e) + ')';
+      var c = clamp((p - .3) / .6);
+      copy.style.opacity = c;
+      copy.style.transform = 'translate3d(' + (-48*(1-ease(c))) + 'px,0,0)';
+      var b = clamp(p / .5);
+      band.style.opacity = 1 - b;
+      band.style.transform = 'translateY(-38%) scale(' + (1 - .08*b) + ')';
+      if(cue) cue.style.opacity = 1 - clamp(p / .15);
+      light.style.setProperty('--hp', e);
+      document.body.classList.toggle('hero-top', window.scrollY < 24);
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', measure);
+    mq.addEventListener ? mq.addEventListener('change', measure) : null;
+    window.addEventListener('load', measure);
+    measure();
+  })();
   /* ---------- hero tilt ---------- */
   var tiltWrap = document.getElementById('heroTilt');
   if(tiltWrap && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
