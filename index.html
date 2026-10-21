@@ -255,6 +255,7 @@
   /* ---------- PC 히어로 (1024px 이상) : 장면 카드 루프 → 스크롤하면 폰이 오른쪽으로, 소개가 왼쪽에서 ---------- */
   .hero-pin{ width:100%; display:flex; align-items:center; }
   .hero-band{ display:none; }
+  .hero-hand{ display:none; }
   @media (min-width:1024px){
     #top{ display:block; height:230vh; min-height:0; padding:0; overflow:visible; }
     .hero-pin{ position:sticky; top:0; height:100vh; overflow:hidden; padding-top:4.5rem; }
@@ -265,6 +266,8 @@
     .hb-card img{ width:100%; height:100%; object-fit:cover; filter:saturate(.9) brightness(.78); }
     .hb-card figcaption{ position:absolute; left:14px; bottom:12px; font-size:13px; font-weight:600; color:#F5FCF8; background:rgba(0,8,8,.6); padding:5px 10px; border-radius:9999px; }
     .hero-grid{ z-index:1; }
+    .hero-hand{ display:block; position:absolute; z-index:2; width:min(820px,80vh); left:calc(50% - min(820px,80vh) * .36); top:calc(4rem + 1vh); height:auto; pointer-events:none;
+      filter:drop-shadow(0 40px 80px rgba(0,0,0,.6)); will-change:transform,opacity; }
     #top .hero-phone[data-rv]{ animation:none; opacity:1; }
     .hero-copy, .hero-phone, .hero-band, .hero-cue{ will-change:transform,opacity; }
     nav.fixed{ transition:transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease; }
@@ -369,6 +372,7 @@
 <!-- ============ HERO ============ -->
 <section id="top" class="relative min-h-[100dvh] flex items-center overflow-hidden pt-32 pb-16">
 <div class="hero-pin">
+  <img class="hero-hand" src="assets/hero-hand.webp" alt="손에 든 휴대폰에 ANITRIP 온보딩 화면이 떠 있다." width="820" height="1002">
   <div class="hero-band" aria-hidden="true"><div class="hb-track"><figure class="hb-card"><img src="assets/scenes/s1.webp" alt="" loading="eager"><figcaption>스가 신사 계단</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s2.webp" alt="" loading="eager"><figcaption>가마쿠라코코마에역</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s3.webp" alt="" loading="eager"><figcaption>히지리바시 다리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s4.webp" alt="" loading="eager"><figcaption>아키하바라 전자상가</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s5.webp" alt="" loading="eager"><figcaption>시모키타자와 거리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s6.webp" alt="" loading="eager"><figcaption>신주쿠 교엔</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s7.webp" alt="" loading="eager"><figcaption>니시노미야 신사</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s8.webp" alt="" loading="eager"><figcaption>시치리가하마 언덕길</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s9.webp" alt="" loading="eager"><figcaption>구사쓰 온천 유바타케</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s1.webp" alt="" loading="eager"><figcaption>스가 신사 계단</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s2.webp" alt="" loading="eager"><figcaption>가마쿠라코코마에역</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s3.webp" alt="" loading="eager"><figcaption>히지리바시 다리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s4.webp" alt="" loading="eager"><figcaption>아키하바라 전자상가</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s5.webp" alt="" loading="eager"><figcaption>시모키타자와 거리</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s6.webp" alt="" loading="eager"><figcaption>신주쿠 교엔</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s7.webp" alt="" loading="eager"><figcaption>니시노미야 신사</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s8.webp" alt="" loading="eager"><figcaption>시치리가하마 언덕길</figcaption></figure><figure class="hb-card"><img src="assets/scenes/s9.webp" alt="" loading="eager"><figcaption>구사쓰 온천 유바타케</figcaption></figure></div></div>
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <div class="aurora"></div>
@@ -2181,7 +2185,7 @@
     var sec = document.getElementById('top');
     if(!sec) return;
     var copy = sec.querySelector('.hero-copy'), phone = sec.querySelector('.hero-phone'),
-        band = sec.querySelector('.hero-band'), cue = sec.querySelector('.hero-cue'),
+        band = sec.querySelector('.hero-band'), cue = sec.querySelector('.hero-cue'), hand = sec.querySelector('.hero-hand'),
         light = sec.querySelector('.hero-pin > .absolute.inset-0');
     var dx = 0;
     function clamp(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
@@ -2193,7 +2197,7 @@
       update();
     }
     function reset(){
-      [copy, phone, band, cue].forEach(function(el){ if(el){ el.style.transform=''; el.style.opacity=''; } });
+      [copy, phone, band, cue, hand].forEach(function(el){ if(el){ el.style.transform=''; el.style.opacity=''; } });
       document.body.classList.remove('hero-top');
     }
     function update(){
@@ -2201,6 +2205,11 @@
       var travel = sec.offsetHeight - window.innerHeight;
       var p = clamp(window.scrollY / (travel * .7));
       var e = ease(p);
+      // 손에 든 폰이 내려가며 사라지고, 목업 폰이 가운데에서 오른쪽 자리로 옮겨 간다
+      var hd = clamp(p / .35);
+      hand.style.opacity = 1 - hd;
+      hand.style.transform = 'translate3d(0,' + (90*ease(hd)) + 'px,0) scale(' + (1 - .06*hd) + ')';
+      phone.style.opacity = clamp((p - .12) / .28);
       phone.style.transform = 'translate3d(' + (dx*(1-e)) + 'px,0,0) scale(' + (1.12 - .12*e) + ')';
       var c = clamp((p - .3) / .6);
       copy.style.opacity = c;
